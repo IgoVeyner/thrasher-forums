@@ -1,0 +1,8 @@
+/backend/tmp/*
+/backend/log/*
+.env
+/backend/db/*.sqlite3
+
+/backend/config/master.key
+
+/frontend/node_modules/
