@@ -10,3 +10,12 @@ export const postUser = user => {
   })
   .then(parseJSON)
 }
+
+export const fetchLogin = credentials => {
+  return fetch(URL + '/auth', {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(credentials)
+  })
+  .then(parseJSON)
+} 
