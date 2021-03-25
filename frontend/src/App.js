@@ -14,7 +14,7 @@ function App() {
     fetchLogin(credentials).then(data => {
       if (data.error) {
         // display message on screen differently
-        alert(data.message) 
+        alert(data.error) 
       }
 
       if (data.jwt) {
