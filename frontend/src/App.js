@@ -35,6 +35,7 @@ function App() {
       <Route path="/signup" exact component={SignupForm} />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
 
+      <button onClick={handleLogout}>LOGOUT</button>
     </Router>
   );
 }
