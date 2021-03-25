@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { fetchLogin } from '../../../fetches'
 
-export default function LoginForm() {
+export default function LoginForm({ handleLogin }) {
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
@@ -23,7 +22,7 @@ export default function LoginForm() {
 
   const handleSubmit = event => {
     event.preventDefault()
-    fetchLogin({user: { username, password }})
+    handleLogin({user: { username, password }})
   }
 
   return (
