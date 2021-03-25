@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { postUser } from '../../../fetches'
 
 export default function SignupForm({handleSignup}) {
 
@@ -24,9 +25,8 @@ export default function SignupForm({handleSignup}) {
 
   const handleSubmit = event => {
     event.preventDefault()
-    console.log("signingup")
-    // not yet implemented
-    // handleSignup({user: {username, password, email}})
+    postUser({user: {username, password, email}})
+    .then(data => console.log(data))
   }
 
   return (
