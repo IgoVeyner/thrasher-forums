@@ -4,11 +4,26 @@ import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { useState } from 'react'
-import { fetchLogin } from './fetches'
+import { fetchLogin, postUser } from './fetches'
 
 function App() {
 
   const [user, setUser] = useState({})
+
+  const handleSignup = newUser => {
+    postUser(newUser)
+    .then(data => {
+      if (data.error) {
+        // display user errors on screen differently
+        alert(data.messages)
+      }
+      
+      if (data.jwt) {
+        localStorage.setItem('jwt', data.jwt)
+        setUser(data.user)
+      }
+    })
+  }
 
   const handleLogin = credentials => {
     fetchLogin(credentials).then(data => {
@@ -32,7 +47,7 @@ function App() {
   return (
     <Router>
       <Route path="/" component={Home} />
-      <Route path="/signup" exact component={SignupForm} />
+      <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
 
       <button onClick={handleLogout}>LOGOUT</button>

@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import { postUser } from '../../../fetches'
 
-export default function SignupForm() {
+export default function SignupForm({ handleSignup }) {
 
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
@@ -20,7 +19,7 @@ export default function SignupForm() {
       case 'password':
         setPassword(e.target.value)
         break
-        
+
       default:
         return null
     }
@@ -28,8 +27,7 @@ export default function SignupForm() {
 
   const handleSubmit = event => {
     event.preventDefault()
-    postUser({user: {username, password, email}})
-    .then(data => console.log(data))
+    handleSignup({user: {username, password, email}})
   }
 
   return (
