@@ -19,6 +19,7 @@ class ApplicationController < ActionController::API
      rescue JWT::DecodeError
        nil
      end 
+    end
   end
 
   def current_user
@@ -33,7 +34,7 @@ class ApplicationController < ActionController::API
   end
 
   def authorized
-    render :json { message: 'Unauthorized Credentials' }, status: :unauthorized unless logged_in?
+    render json: { message: 'Unauthorized Credentials' }, status: :unauthorized unless logged_in?
   end
 
 end
