@@ -24,8 +24,6 @@ export default function LoginForm() {
   const handleSubmit = event => {
     event.preventDefault()
     fetchLogin({user: { username, password }})
-    // login not implemented yet
-    // handleLogin({user: {username, password}})
   }
 
   return (

@@ -3,7 +3,7 @@ const headers = { 'Content-Type': 'application/json', 'Accepts': 'application/js
 const parseJSON = res => res.json()
 
 export const postUser = user => {
-  return fetch(URL + "/users", {
+  return fetch(URL + "users", {
     method: "POST",
     headers,
     body: JSON.stringify(user)
@@ -12,7 +12,7 @@ export const postUser = user => {
 }
 
 export const fetchLogin = credentials => {
-  return fetch(URL + '/auth', {
+  return fetch(URL + 'auth', {
     method: 'POST',
     headers,
     body: JSON.stringify(credentials)
