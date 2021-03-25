@@ -1,3 +1,8 @@
 Rails.application.routes.draw do
-  resources :users, only: [:create]
+  scope '/api' do
+    scope '/v1' do
+      resources :users, only: [:create]
+      resources :auth, only: [:create]
+    end
+  end
 end

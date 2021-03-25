@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::API
   before_action :authorized
 
-  def encoded_token(payload)
+  def encode_token(payload)
     JWT.encode payload, ENV['JWT_SECRET']
   end
 
