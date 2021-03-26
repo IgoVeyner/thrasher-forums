@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
-import { getUser, setFetchedUser } from './redux/actions/userActions'
+import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 
 function App() {
 
@@ -47,7 +47,7 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem('jwt')
-    setUser({})
+    dispatch(clearUser())
   }
 
   useEffect(() => {

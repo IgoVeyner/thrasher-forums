@@ -13,3 +13,9 @@ export const setFetchedUser = (username) => {
     dispatch({ type: 'SET_USER', payload: username })
   }
 }
+
+export const clearUser = () => {
+  return (dispatch) => {
+    dispatch({ type: 'CLEAR_USER' })
+  }
+}
