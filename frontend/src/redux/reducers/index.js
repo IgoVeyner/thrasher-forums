@@ -1,7 +1,8 @@
 import { combineReducers } from "redux"
+import handleUsers from './userReducer'
 
 const rootReducer = combineReducers({
-  temp: []
+  user: handleUsers
 })
 
 export default rootReducer
