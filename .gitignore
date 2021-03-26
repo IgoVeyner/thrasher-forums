@@ -1,5 +1,6 @@
 /backend/tmp/*
 /backend/log/*
+/backend/.byebug_history
 .env
 /backend/db/*.sqlite3
 

@@ -3,12 +3,18 @@ import Home from './redux/components/home'
 import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
+import { getUser, setFetchedUser } from './redux/actions/userActions'
 
 function App() {
 
-  const [user, setUser] = useState({})
+  const currentUser = useSelector(state => state.user)
+  const dispatch = useDispatch()
+
+  const setCurrentUser = () => dispatch(getUser())
+  const setUser = username => dispatch(setFetchedUser(username))
 
   const handleSignup = newUser => {
     postUser(newUser)
@@ -20,7 +26,7 @@ function App() {
       
       if (data.jwt) {
         localStorage.setItem('jwt', data.jwt)
-        setUser(data.user)
+        setUser(data.user.username)
       }
     })
   }
@@ -34,7 +40,7 @@ function App() {
 
       if (data.jwt) {
         localStorage.setItem('jwt', data.jwt)
-        setUser(data.user)
+        setUser(data.user.username)
       }
     })
   }
@@ -46,11 +52,16 @@ function App() {
 
   useEffect(() => {
     // implement checking if a user is logged in or not
-  })
+    // getCurrentUser()
+    if (localStorage.getItem('jwt')) {
+      // fetchProfile().then(data => console.log(data)) 
+      setCurrentUser()
+    } 
+  }, [])
 
   return (
     <Router>
-      {user === {} ? null : user.username}
+      {/* {currentUser !== {} ? currentUser : null} */}
       <Route path="/" exact component={Home} />
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
