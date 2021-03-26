@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
+import { setToken, clearToken } from './services/localstorage'
 
 function App() {
 
@@ -25,7 +26,7 @@ function App() {
       }
       
       if (data.jwt) {
-        localStorage.setItem('jwt', data.jwt)
+        setToken(data.jwt)
         setUser(data.user.username)
       }
     })
@@ -39,14 +40,14 @@ function App() {
       }
 
       if (data.jwt) {
-        localStorage.setItem('jwt', data.jwt)
+        setToken(data.jwt)
         setUser(data.user.username)
       }
     })
   }
 
   const handleLogout = () => {
-    localStorage.removeItem('jwt')
+    clearToken()
     dispatch(clearUser())
   }
 

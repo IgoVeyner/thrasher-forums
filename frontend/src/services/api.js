@@ -1,8 +1,10 @@
+import { getToken } from './localstorage'
+
 const URL = 'http://localhost:3000/api/v1/'
 const headers = { 'Content-Type': 'application/json', 'Accepts': 'application/json' }
 
 const authHeaders = () => ({
-  Authorization: `Bearer ${localStorage.getItem('jwt')}`
+  Authorization: `Bearer ${getToken()}`
 })
 
 const parseJSON = res => res.json()
