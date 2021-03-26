@@ -46,7 +46,7 @@ function App() {
 
   return (
     <Router>
-      <Route path="/" component={Home} />
+      <Route path="/" exact component={Home} />
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
 
