@@ -51,17 +51,14 @@ function App() {
   }
 
   useEffect(() => {
-    // implement checking if a user is logged in or not
-    // getCurrentUser()
     if (localStorage.getItem('jwt')) {
-      // fetchProfile().then(data => console.log(data)) 
       setCurrentUser()
     } 
   }, [])
 
   return (
     <Router>
-      {/* {currentUser !== {} ? currentUser : null} */}
+      {currentUser === "" ? null : currentUser }
       <Route path="/" exact component={Home} />
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
