@@ -3,8 +3,8 @@ import Home from './redux/components/home'
 import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { useState } from 'react'
-import { fetchLogin, postUser } from './services/api'
+import { useState, useEffect } from 'react'
+import { fetchLogin, postUser, fetchProfile } from './services/api'
 
 function App() {
 
@@ -43,6 +43,10 @@ function App() {
     localStorage.removeItem('jwt')
     setUser({})
   }
+
+  useEffect(() => {
+    // implement checking if a user is logged in or not
+  })
 
   return (
     <Router>
