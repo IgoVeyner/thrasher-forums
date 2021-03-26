@@ -4,7 +4,7 @@ import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import { fetchLogin, postUser, fetchProfile } from './services/api'
+import { fetchLogin, postUser } from './services/api'
 
 function App() {
 
