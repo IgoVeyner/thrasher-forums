@@ -62,16 +62,16 @@ function App() {
     <Router>
       <NavBar checkAuthorization={checkAuthorization} handleLogout={handleLogout} />
 
-      <Route path="/" exact component={Home}>
-        {checkAuthorization() === false ? <Redirect to="/login" /> : null}
+      <Route path="/" exact >
+        {checkAuthorization() === false ? <Redirect to="/login" /> : <Home/> }
       </Route>
       
-      <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } >
-        {checkAuthorization() === true ? <Redirect to="/" /> : null}
+      <Route path="/signup" exact >
+        {checkAuthorization() === true ? <Redirect to="/" /> : <SignupForm handleSignup={handleSignup} />}
       </Route>
 
-      <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } >
-        {checkAuthorization() === true ? <Redirect to="/" /> : null}
+      <Route path="/login" exact >
+        {checkAuthorization() === true ? <Redirect to="/" /> : <LoginForm handleLogin={handleLogin} /> }
       </Route>
 
     </Router>
