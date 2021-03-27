@@ -62,7 +62,9 @@ function App() {
     <Router>
       <NavBar checkAuthorization={checkAuthorization} handleLogout={handleLogout} />
 
-      <Route path="/" exact component={Home} />
+      <Route path="/" exact component={Home}>
+        {checkAuthorization() === false ? <Redirect to="/login" /> : null}
+      </Route>
       
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } >
         {checkAuthorization() === true ? <Redirect to="/" /> : null}
