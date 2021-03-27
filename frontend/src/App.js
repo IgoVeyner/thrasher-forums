@@ -65,13 +65,12 @@ function App() {
 
   return (
     <Router>
-      <NavBar checkAuthorization={checkAuthorization}/>
+      <NavBar checkAuthorization={checkAuthorization} handleLogout={handleLogout} />
 
       <Route path="/" exact component={Home} />
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
 
-      <button onClick={handleLogout}>LOGOUT</button>
     </Router>
   );
 }
