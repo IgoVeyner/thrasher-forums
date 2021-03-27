@@ -33,3 +33,10 @@ export const fetchProfile = () => {
   })
   .then(parseJSON)
 }
+
+export const fetchBoards = () => {
+  return fetch(URL + 'boards', {
+    headers: authHeaders()
+  })
+  .then(parseJSON)
+}
