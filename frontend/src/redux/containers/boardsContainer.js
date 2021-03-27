@@ -7,7 +7,6 @@ export default function BoardsContainer() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // use api to fetch for boards
     dispatch(getBoards())
   }, []);
 
