@@ -1,9 +1,11 @@
 import { useEffect } from 'react'
 import { getBoards } from '../actions/boardActions'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import Boards from '../components/boards'
 
 export default function BoardsContainer() {
 
+  const boards = useSelector(state => state.boards)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -13,9 +15,7 @@ export default function BoardsContainer() {
   return (
     <div>
       <h1>Boards</h1>
-      <ul>
-        
-      </ul>
+      {boards.length > 0 ? <Boards boards={boards} /> : null }
     </div>
   )
 }

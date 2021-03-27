@@ -19,7 +19,6 @@ function App() {
   const setUser = username => dispatch(setFetchedUser(username))
 
   const checkAuthorization = () => {
-    console.log("is the user valid?")
     if (localStorage.getItem('jwt')) {
       return setUserFromToken() === "" ? false : true  
     } 
