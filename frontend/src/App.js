@@ -8,16 +8,18 @@ import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 import { setToken, clearToken } from './services/localstorage'
 import NavBar from './redux/components/nav/navbar'
+import { useEffect } from 'react'
 
 function App() {
 
-  const currentUser = useSelector(state => state.user)
+  const user = useSelector(state => state.user)
   const dispatch = useDispatch()
 
   const setUserFromToken = () => dispatch(getUser())
   const setUser = username => dispatch(setFetchedUser(username))
 
   const checkAuthorization = () => {
+    console.log("is the user valid?")
     if (localStorage.getItem('jwt')) {
       return setUserFromToken() === "" ? false : true  
     } 
@@ -58,20 +60,27 @@ function App() {
     dispatch(clearUser())
   }
 
+  useEffect(() => {
+    checkAuthorization()
+  }, []);
+
   return (
     <Router>
-      <NavBar checkAuthorization={checkAuthorization} handleLogout={handleLogout} />
+      <NavBar handleLogout={handleLogout} />
 
       <Route path="/" exact >
-        {checkAuthorization() === false ? <Redirect to="/login" /> : <Home/> }
+        {console.log("checking for homepage")}
+        {user === "" ? <Redirect to="/login" /> : <Home/> }
       </Route>
       
       <Route path="/signup" exact >
-        {checkAuthorization() === true ? <Redirect to="/" /> : <SignupForm handleSignup={handleSignup} />}
+        {console.log("checking for signup")}
+        {user !== "" ? <Redirect to="/" /> : <SignupForm handleSignup={handleSignup} />}
       </Route>
 
       <Route path="/login" exact >
-        {checkAuthorization() === true ? <Redirect to="/" /> : <LoginForm handleLogin={handleLogin} /> }
+        {console.log("checking for login")}
+        {user !== "" ? <Redirect to="/" /> : <LoginForm handleLogin={handleLogin} /> }
       </Route>
 
     </Router>

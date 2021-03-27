@@ -1,12 +1,14 @@
-import handleUsers from '../../reducers/userReducer'
 import Authorized from './authorized'
 import Unauthorized from './unauthorized'
+import { useSelector } from 'react-redux'
 
-export default function NavBar({ checkAuthorization, handleLogout }) {
+export default function NavBar({ handleLogout }) {
+
+  const user = useSelector(state => state.user)
 
   return (
     <>
-      { checkAuthorization() === true ? 
+      { user !== "" ? 
         <Authorized handleLogout={handleLogout} /> 
         : 
         <Unauthorized /> 
