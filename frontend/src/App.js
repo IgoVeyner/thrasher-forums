@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 import { setToken, clearToken } from './services/localstorage'
+import NavBar from './redux/components/navbar'
 
 function App() {
 
@@ -60,6 +61,8 @@ function App() {
   return (
     <Router>
       {currentUser === "" ? null : currentUser }
+      <NavBar />
+
       <Route path="/" exact component={Home} />
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
       <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
