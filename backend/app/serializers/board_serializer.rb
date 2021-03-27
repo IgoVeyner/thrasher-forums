@@ -1,3 +1,3 @@
 class BoardSerializer < ActiveModel::Serializer
-  attributes :id, :name, :description
+  attributes :name, :description
 end
