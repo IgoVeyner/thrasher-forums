@@ -8,15 +8,22 @@ import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 import { setToken, clearToken } from './services/localstorage'
-import NavBar from './redux/components/navbar'
+import NavBar from './redux/components/nav/navbar'
 
 function App() {
 
   const currentUser = useSelector(state => state.user)
   const dispatch = useDispatch()
 
-  const setCurrentUser = () => dispatch(getUser())
+  const setUserFromToken = () => dispatch(getUser())
   const setUser = username => dispatch(setFetchedUser(username))
+
+  const checkAuthorization = () => {
+    if (localStorage.getItem('jwt')) {
+      return setUserFromToken() === "" ? false : true  
+    } 
+    return false
+  }
 
   const handleSignup = newUser => {
     postUser(newUser)
@@ -53,15 +60,12 @@ function App() {
   }
 
   useEffect(() => {
-    if (localStorage.getItem('jwt')) {
-      setCurrentUser()
-    } 
+    checkAuthorization()
   }, [])
 
   return (
     <Router>
-      {currentUser === "" ? null : currentUser }
-      <NavBar />
+      <NavBar checkAuthorization={checkAuthorization}/>
 
       <Route path="/" exact component={Home} />
       <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
