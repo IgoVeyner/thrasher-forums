@@ -1,8 +1,11 @@
+import Board from "./board"
+
 export default function Boards({ boards }) {
   
   const renderBoards = () => {
-    // send down individual board data by mapping over boards
-    console.log("this worked")
+    return boards.map(board => { 
+      return <Board board={board} /> 
+    })
   }
   
   return (

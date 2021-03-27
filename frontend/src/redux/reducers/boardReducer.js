@@ -1,7 +1,7 @@
 function handleBoards(state = [], action) {
   switch (action.type) {
-    case "ADD_BOARDS":
-      return [...state, action.payload]
+    case "SET_BOARDS":
+      return action.payload
 
     default:
       return state
