@@ -1,4 +1,4 @@
- function handleUsers(state = "", action) {
+function handleUsers(state = "", action) {
   switch (action.type) {
     case "SET_USER":
       return action.payload || ""

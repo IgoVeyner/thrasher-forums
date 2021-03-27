@@ -2,8 +2,7 @@ import './App.css'
 import Home from './redux/components/home'
 import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { useEffect } from 'react'
+import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
@@ -59,17 +58,19 @@ function App() {
     dispatch(clearUser())
   }
 
-  useEffect(() => {
-    checkAuthorization()
-  }, [])
-
   return (
     <Router>
       <NavBar checkAuthorization={checkAuthorization} handleLogout={handleLogout} />
 
       <Route path="/" exact component={Home} />
-      <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } />
-      <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } />
+      
+      <Route path="/signup" exact render={ () => <SignupForm handleSignup={handleSignup} /> } >
+        {checkAuthorization() === true ? <Redirect to="/" /> : null}
+      </Route>
+
+      <Route path="/login" exact render={ () => <LoginForm handleLogin={handleLogin} /> } >
+        {checkAuthorization() === true ? <Redirect to="/" /> : null}
+      </Route>
 
     </Router>
   );
