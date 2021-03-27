@@ -69,17 +69,14 @@ function App() {
       <NavBar handleLogout={handleLogout} />
 
       <Route path="/" exact >
-        {console.log("checking for homepage")}
         {user === "" ? <Redirect to="/login" /> : <Home/> }
       </Route>
       
       <Route path="/signup" exact >
-        {console.log("checking for signup")}
         {user !== "" ? <Redirect to="/" /> : <SignupForm handleSignup={handleSignup} />}
       </Route>
 
       <Route path="/login" exact >
-        {console.log("checking for login")}
         {user !== "" ? <Redirect to="/" /> : <LoginForm handleLogin={handleLogin} /> }
       </Route>
 
