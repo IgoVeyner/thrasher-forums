@@ -6,6 +6,12 @@ function handleBusy(state = false, action) {
     case "DONE_FETCHING":
       return false
 
+    case "SET_USER":
+      return false
+
+    case "SET_BOARDS":
+      return false
+
     default:
       return state
   }

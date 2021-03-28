@@ -2,8 +2,9 @@ import { fetchProfile } from '../../services/api'
 
 export const getUser = () => {
   return (dispatch) => {
+    dispatch({ type: "FETCHING" })
     fetchProfile().then(response => {
-      dispatch({type: 'SET_USER', payload: response.username})
+      dispatch({ type: 'SET_USER', payload: response.username })
     })
   }
 }

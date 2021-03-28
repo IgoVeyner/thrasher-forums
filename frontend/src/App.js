@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
-import { setToken, clearToken } from './services/localstorage'
+import { setToken, clearToken, getToken } from './services/localstorage'
 import NavBar from './redux/components/nav/navbar'
 import { useEffect } from 'react'
 
@@ -19,10 +19,9 @@ function App() {
   const setUser = username => dispatch(setFetchedUser(username))
 
   const checkAuthorization = () => {
-    if (localStorage.getItem('jwt')) {
-      return setUserFromToken() === "" ? false : true  
+    if (getToken()) {
+      setUserFromToken()  
     } 
-    return false
   }
 
   const handleSignup = newUser => {
@@ -63,24 +62,53 @@ function App() {
     checkAuthorization()
   }, []);
 
+  const redirectToLoginPreCheck = () => {
+    if (user === "" && getToken()) {
+      return null
+    }
+    if (user === "") {
+      return <Redirect to="/login" />  
+    } else {
+      return <Home/>
+    }
+  }
+
+  const redirectToHomePreCheck = route => {
+    if (user === "" && getToken()) {
+      return null
+    }
+    if (user === "") {
+      switch (route) {
+        case "signup":
+          return <SignupForm handleSignup={handleSignup} />
+
+        case "login":
+          return <LoginForm handleLogin={handleLogin} />
+       }
+
+    } else {
+      return <Redirect to="/" />
+    }
+  }
+
   return (
     <Router>
       <NavBar handleLogout={handleLogout} />
 
       <Route path="/" exact >
-        {user === "" ? <Redirect to="/login" /> : <Home/> }
+        {redirectToLoginPreCheck()}
       </Route>
       
       <Route path="/signup" exact >
-        {user !== "" ? <Redirect to="/" /> : <SignupForm handleSignup={handleSignup} />}
+        {redirectToHomePreCheck("signup")}
       </Route>
 
       <Route path="/login" exact >
-        {user !== "" ? <Redirect to="/" /> : <LoginForm handleLogin={handleLogin} /> }
+        {redirectToHomePreCheck("login")}
       </Route>
 
     </Router>
-  );
+  )
 }
 
 export default App;
