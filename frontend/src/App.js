@@ -19,7 +19,7 @@ function App() {
   const setUser = username => dispatch(setFetchedUser(username))
 
   const checkAuthorization = () => {
-    if (user === "" && getToken()) {
+    if (getToken() && user === "") {
       setUserFromToken()  
     } 
   }
@@ -62,21 +62,9 @@ function App() {
     checkAuthorization()
   }, []);
 
-  const redirectToLoginPreCheck = () => {
-    if (user === "" && getToken()) {
-      return null
-    }
-    if (user === "") {
-      return <Redirect to="/login" />  
-    } else {
-      return <Home/>
-    }
-  }
+  const redirectToLoginPreCheck = () => user === "" ? <Redirect to="/login" /> : <Home/>
 
   const redirectToHomePreCheck = route => {
-    if (user === "" && getToken()) {
-      return null
-    }
     if (user === "") {
       switch (route) {
         case "signup":
@@ -94,23 +82,35 @@ function App() {
     }
   }
 
+  const checkForTokenAndUser = () => {
+    if (getToken() && user === "") {
+      return null
+    } else {
+      return (
+        <Router>
+          <NavBar handleLogout={handleLogout} />
+
+          <Route path="/" exact >
+            {redirectToLoginPreCheck()}
+          </Route>
+          
+          <Route path="/signup" exact >
+            {redirectToHomePreCheck("signup")}
+          </Route>
+
+          <Route path="/login" exact >
+            {redirectToHomePreCheck("login")}
+          </Route>
+
+        </Router>
+      )
+    }
+  }
+
   return (
-    <Router>
-      <NavBar handleLogout={handleLogout} />
-
-      <Route path="/" exact >
-        {redirectToLoginPreCheck()}
-      </Route>
-      
-      <Route path="/signup" exact >
-        {redirectToHomePreCheck("signup")}
-      </Route>
-
-      <Route path="/login" exact >
-        {redirectToHomePreCheck("login")}
-      </Route>
-
-    </Router>
+    <>
+      {checkForTokenAndUser()}
+    </>
   )
 }
 
