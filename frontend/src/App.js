@@ -84,6 +84,9 @@ function App() {
 
         case "login":
           return <LoginForm handleLogin={handleLogin} />
+
+        default:
+          return <LoginForm handleLogin={handleLogin} />
        }
 
     } else {
