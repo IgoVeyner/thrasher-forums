@@ -1,17 +1,15 @@
 import { useEffect } from 'react'
 // create and import postActions
 import { useSelector, useDispatch } from 'react-redux'
-// create and import Posts
+import { getPosts } from '../actions/postActions'
 
-export default function PostContainer() {
+export default function PostContainer({ route }) {
 
-  // Not set up yet
-  // const posts = useSelector(state => state.posts)
+  const posts = useSelector(state => state.posts)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // Not set up yet
-    // dispatch(getPosts())
+    dispatch(getPosts(route))
   }, []);
 
   return (
