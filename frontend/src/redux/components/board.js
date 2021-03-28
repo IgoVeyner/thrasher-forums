@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 export default function Board({ board }) {
 
   const renderDescription = () => {
@@ -7,9 +9,11 @@ export default function Board({ board }) {
   }
 
   return (
-    <div>
-      <p>{board.name}</p>
-      {renderDescription()}
-    </div>
+    <Link to={`/${board.name}`}>
+      <div>
+        <p>{board.name}</p>
+        {renderDescription()}
+      </div>
+    </Link>
   )
 }
