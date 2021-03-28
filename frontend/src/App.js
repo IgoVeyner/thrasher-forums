@@ -63,7 +63,25 @@ function App() {
     checkAuthorization()
   }, []);
 
-  const redirectToLoginPreCheck = () => user === "" ? <Redirect to="/login" /> : <Home/>
+  const redirectToLoginPreCheck = (route = "/") => {
+    if (user !== "") {
+      switch (route) {
+        case "events":
+          return <PostContainer route={route} />
+
+        case "videos":
+          return <PostContainer route={route} />
+
+        case "photos":
+          return <PostContainer route={route} />
+
+        default:
+          return <Home />
+      }
+    } else {
+      return <Redirect to="/login" />
+    }
+  } 
 
   const redirectToHomePreCheck = route => {
     if (user === "") {
@@ -104,15 +122,15 @@ function App() {
           </Route>
 
           <Route path="/events" exact >
-            {redirectToLoginPreCheck()}
+            {redirectToLoginPreCheck("events")}
           </Route>
 
           <Route path="/videos" exact >
-            {redirectToLoginPreCheck()}
+            {redirectToLoginPreCheck("videos")}
           </Route>
 
           <Route path="/photos" exact >
-            {redirectToLoginPreCheck()}
+            {redirectToLoginPreCheck("photos")}
           </Route>
 
         </Router>
