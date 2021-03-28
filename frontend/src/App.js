@@ -9,6 +9,7 @@ import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 import { setToken, clearToken, getToken } from './services/localstorage'
 import NavBar from './redux/components/nav/navbar'
 import { useEffect } from 'react'
+import PostContainer from './redux/containers/postsContainer'
 
 function App() {
 
