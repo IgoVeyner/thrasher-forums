@@ -8,7 +8,7 @@ class BoardsController < ApplicationController
   def show 
     board = Board.find_by_slug(params[:id])
     if board 
-      render json: {board: BoardSerializer.new(baord)}, status: :accepted
+      render json: {board: BoardSerializer.new(board)}, status: :accepted
     else 
       render json: {error: "No board found"}, status: :not_acceptable
     end
