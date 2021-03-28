@@ -19,7 +19,7 @@ function App() {
   const setUser = username => dispatch(setFetchedUser(username))
 
   const checkAuthorization = () => {
-    if (getToken()) {
+    if (user === "" && getToken()) {
       setUserFromToken()  
     } 
   }
