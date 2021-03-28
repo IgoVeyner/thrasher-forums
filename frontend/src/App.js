@@ -102,6 +102,18 @@ function App() {
             {redirectToHomePreCheck("login")}
           </Route>
 
+          <Route path="/Events" exact >
+            {redirectToLoginPreCheck()}
+          </Route>
+
+          <Route path="/Videos" exact >
+            {redirectToLoginPreCheck()}
+          </Route>
+
+          <Route path="/Photos" exact >
+            {redirectToLoginPreCheck()}
+          </Route>
+
         </Router>
       )
     }
