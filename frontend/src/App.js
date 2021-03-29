@@ -10,6 +10,7 @@ import { setToken, clearToken, getToken } from './services/localstorage'
 import NavBar from './redux/components/nav/navbar'
 import { useEffect } from 'react'
 import PostContainer from './redux/containers/postsContainer'
+import NoMatch from './redux/components/noMatch'
 
 function App() {
 
