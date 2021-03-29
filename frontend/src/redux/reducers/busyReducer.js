@@ -4,12 +4,11 @@ function handleBusy(state = false, action) {
       return true
 
     case "DONE_FETCHING":
-      return false
-
     case "SET_USER":
-      return false
-
     case "SET_BOARDS":
+    case "SET_POSTS":
+    case "ADD_POST":
+    case "REMOVE_POST":
       return false
 
     default:
