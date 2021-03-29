@@ -2,7 +2,7 @@ import './App.css'
 import Home from './redux/components/home'
 import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
-import { BrowserRouter as Router, Redirect, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
@@ -109,29 +109,35 @@ function App() {
         <Router>
           <NavBar handleLogout={handleLogout} />
 
-          <Route path="/" exact >
-            {redirectToLoginPreCheck()}
-          </Route>
-          
-          <Route path="/signup" exact >
-            {redirectToHomePreCheck("signup")}
-          </Route>
+          <Switch>
+            
+            <Route path="/signup" exact >
+              {redirectToHomePreCheck("signup")}
+            </Route>
 
-          <Route path="/login" exact >
-            {redirectToHomePreCheck("login")}
-          </Route>
+            <Route path="/login" exact >
+              {redirectToHomePreCheck("login")}
+            </Route>
 
-          <Route path="/events" exact >
-            {redirectToLoginPreCheck("events")}
-          </Route>
+            <Route path="/events" exact >
+              {redirectToLoginPreCheck("events")}
+            </Route>
 
-          <Route path="/videos" exact >
-            {redirectToLoginPreCheck("videos")}
-          </Route>
+            <Route path="/videos" exact >
+              {redirectToLoginPreCheck("videos")}
+            </Route>
 
-          <Route path="/photos" exact >
-            {redirectToLoginPreCheck("photos")}
-          </Route>
+            <Route path="/photos" exact >
+              {redirectToLoginPreCheck("photos")}
+            </Route>
+            
+            <Route path="/" exact >
+              {redirectToLoginPreCheck()}
+            </Route>
+
+            <Route path="*" component={NoMatch} />
+
+          </Switch>
 
         </Router>
       )

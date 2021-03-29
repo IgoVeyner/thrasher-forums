@@ -7,3 +7,5 @@
 /backend/config/master.key
 
 /frontend/node_modules/
+
+*.swp
