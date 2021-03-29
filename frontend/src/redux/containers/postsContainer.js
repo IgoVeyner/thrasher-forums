@@ -10,7 +10,7 @@ export default function PostContainer({ route }) {
 
   useEffect(() => {
     dispatch(getPosts(route))
-  }, []);
+  });
 
   return (
     <div>
