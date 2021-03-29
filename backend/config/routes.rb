@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       resources :auth, only: [:create]
       resources :boards, only: [:index, :show]
+      resources :posts, only: [:create, :show, :destroy]
       get 'profile', to: "auth#profile"
     end
   end
