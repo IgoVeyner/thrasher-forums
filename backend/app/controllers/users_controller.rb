@@ -12,6 +12,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def show 
+    user = User.find_by_id(params[:id])
+
+    if user 
+      render json: { user: UserSerializer.new(user) }, status: :accepted
+    else
+      render json: {error: 'cannot find that user'}, status: :not_acceptable
+    end
+  end
+
   private
 
   def user_params
