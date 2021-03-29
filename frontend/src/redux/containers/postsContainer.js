@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-// create and import postActions
 import { useSelector, useDispatch } from 'react-redux'
 import { getPosts } from '../actions/postActions'
 
@@ -10,7 +9,7 @@ export default function PostContainer({ route }) {
 
   useEffect(() => {
     dispatch(getPosts(route))
-  });
+  }, [route])
 
   return (
     <div>
