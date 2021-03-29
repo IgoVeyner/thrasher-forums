@@ -68,11 +68,7 @@ function App() {
     if (user !== "") {
       switch (route) {
         case "events":
-          return <PostContainer route={route} />
-
         case "videos":
-          return <PostContainer route={route} />
-
         case "photos":
           return <PostContainer route={route} />
 
@@ -91,8 +87,6 @@ function App() {
           return <SignupForm handleSignup={handleSignup} />
 
         case "login":
-          return <LoginForm handleLogin={handleLogin} />
-
         default:
           return <LoginForm handleLogin={handleLogin} />
        }
