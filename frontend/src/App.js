@@ -62,7 +62,7 @@ function App() {
 
   useEffect(() => {
     checkAuthorization()
-  }, []);
+  }, [])
 
   const redirectToLoginPreCheck = (route = "/") => {
     if (user !== "") {
@@ -139,7 +139,6 @@ function App() {
             <Route path="*" component={NoMatch} />
 
           </Switch>
-
         </Router>
       )
     }
@@ -152,4 +151,4 @@ function App() {
   )
 }
 
-export default App;
+export default App
