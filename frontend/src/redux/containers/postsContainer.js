@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPosts } from '../actions/postActions'
+import Posts from '../components/posts';
 
 export default function PostContainer({ route }) {
 
@@ -14,7 +15,7 @@ export default function PostContainer({ route }) {
   return (
     <div>
       <h1>Posts</h1>
-      {/* render Posts */}
+      {posts.length > 0 ? <Posts posts={posts} /> : null }
     </div>
   )
 
