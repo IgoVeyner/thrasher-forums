@@ -1,3 +1,6 @@
 class Post < ApplicationRecord
-  # todo: add relationships
+  belongs_to :user
+  belongs_to :board
+
+  # todo: comments relationship
 end

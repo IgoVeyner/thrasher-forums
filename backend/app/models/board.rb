@@ -1,4 +1,8 @@
 class Board < ApplicationRecord
+  has_many :posts
+  
+  validates :name, uniqueness: true
+
   def slug 
     self.name.gsub(" ", "-")
   end
@@ -7,5 +11,4 @@ class Board < ApplicationRecord
     self.all.find {|game| game.slug == slug}
   end
 
-  validates :name, uniqueness: true
 end
