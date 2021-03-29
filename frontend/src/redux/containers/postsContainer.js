@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPosts } from '../actions/postActions'
 import Posts from '../components/posts';
+import Post from '../components/forms/post'
 
 export default function PostContainer({ route }) {
 
@@ -16,6 +17,7 @@ export default function PostContainer({ route }) {
     <div>
       <h1>Posts</h1>
       {posts.length > 0 ? <Posts posts={posts} /> : null }
+      <Post />
     </div>
   )
 
