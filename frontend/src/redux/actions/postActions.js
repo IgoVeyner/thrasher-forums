@@ -13,8 +13,7 @@ export const addPost = post => {
   return dispatch => {
     dispatch({type: "FETCHING" })
     postPost(post).then(response => {
-      console.log(response)
-      // dispatch({ type: "ADD_POST", payload: response.post })
+      dispatch({ type: "ADD_POST", payload: response.post })
     })
   }
 }

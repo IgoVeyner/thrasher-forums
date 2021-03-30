@@ -11,7 +11,7 @@ export default function PostContainer({ route }) {
   const dispatch = useDispatch()
 
   const submitPost = post => {
-    addPost(post)
+    dispatch(addPost(post))
   }
 
   useEffect(() => {

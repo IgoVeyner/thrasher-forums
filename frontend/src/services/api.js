@@ -27,12 +27,13 @@ export const postPost = post => {
   return fetch(URL + "posts", {
     method: 'POST',
     headers: { 
+      'Authorization': `Bearer ${getToken()}`,
       'Content-Type': 'application/json',
-      'Accepts': 'application/json',
-      Authorization: `Bearer ${getToken()}`
+      'Accepts': 'application/json'
     },
     body: JSON.stringify(post)
   })
+  .then(parseJSON)
 }
 
 const authFetch = path => {
