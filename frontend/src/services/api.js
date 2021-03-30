@@ -23,12 +23,25 @@ export const fetchLogin = credentials => {
   .then(parseJSON)
 } 
 
+export const postPost = post => {
+  return fetch(URL + "posts", {
+    method: 'POST',
+    headers: { 
+      'Content-Type': 'application/json',
+      'Accepts': 'application/json',
+      Authorization: `Bearer ${getToken()}`
+    },
+    body: JSON.stringify(post)
+  })
+}
+
 const authFetch = path => {
   return fetch(URL + path, {
     headers: authHeaders()
   })
   .then(parseJSON)
 }
+
 
 export const fetchProfile = () => authFetch("profile")
 export const fetchBoards = () => authFetch("boards")
