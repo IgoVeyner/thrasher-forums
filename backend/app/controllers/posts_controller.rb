@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       board_id: board.id
     )
 
-    if post 
+    if post.valid?
       render json: { post: PostSerializer.new(post) }, status: :created
     else
       render json: { error: 'failed to create post', messages: post.errors.full_messages }, status: :not_acceptable

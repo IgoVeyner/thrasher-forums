@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPosts, addPost } from '../actions/postActions'
+import { postPost } from '../../services/api'
 import Posts from '../components/posts';
 import Post from '../components/forms/post'
 
@@ -11,7 +12,16 @@ export default function PostContainer({ route }) {
   const dispatch = useDispatch()
 
   const submitPost = post => {
-    dispatch(addPost(post))
+    postPost(post)
+    .then(data => {
+      if (data.error) {
+        alert(data.messages)
+      }
+
+      if (data.post) {
+        dispatch(addPost(data.post))
+      }
+    })
   }
 
   useEffect(() => {

@@ -11,10 +11,7 @@ export const getPosts = boardName => {
 
 export const addPost = post => {
   return dispatch => {
-    dispatch({type: "FETCHING" })
-    postPost(post).then(response => {
-      dispatch({ type: "ADD_POST", payload: response.post })
-    })
+   dispatch({ type: "ADD_POST", payload: post })
   }
 }
 
