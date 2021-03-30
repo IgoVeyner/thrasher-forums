@@ -17,6 +17,17 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    post = Post.find_by(params[:id])
+
+    if post.valid?
+      post.destroy
+      render json: { message: 'Post deleted'}, status: :accepted
+    else
+      render json: { error: 'Post not found' }, status: :not_acceptable
+    end
+  end
+
   private
 
   def post_params
