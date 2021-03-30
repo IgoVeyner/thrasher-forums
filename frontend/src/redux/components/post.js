@@ -27,7 +27,6 @@ export default function Post({ post }) {
     // add link to post show page
     // <Link to={"/"} >
       <div>
-        {console.log(post)}
         <h2>{post.title}</h2>
         {renderCreatedAt()}
         <p>By: {user}</p>
