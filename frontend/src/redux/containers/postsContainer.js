@@ -12,6 +12,7 @@ export default function PostContainer({ route }) {
   const dispatch = useDispatch()
 
   const submitPost = post => {
+    dispatch({ type: "FETCHING" })
     postPost(post)
     .then(data => {
       if (data.error) {
@@ -31,7 +32,7 @@ export default function PostContainer({ route }) {
   return (
     <div>
       <h1>Posts</h1>
-      {posts.length > 0 ? <Posts posts={posts} /> : null }
+      {posts.length > 0 ? <Posts posts={posts} user={user} /> : null }
       <Post submitPost={submitPost} user={user} board={route} />
     </div>
   )

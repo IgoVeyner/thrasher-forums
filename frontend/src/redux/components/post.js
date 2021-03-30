@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchUser } from '../../services/api'
 
-export default function Post({ post }) {
+export default function Post({ post, currentUser }) {
 
   const [user, setUser] = useState('')
 
@@ -19,9 +19,15 @@ export default function Post({ post }) {
     })
   }
 
+  const renderDeleteButton = () => {
+    return (
+      <button>Delete</button>
+    )
+  }
+
   useEffect(() => {
     getUserData()
-  }, []);
+  }, [])
 
   return (
     // add link to post show page
@@ -30,6 +36,7 @@ export default function Post({ post }) {
         <h2>{post.title}</h2>
         {renderCreatedAt()}
         <p>By: {user}</p>
+        {currentUser === user ? renderDeleteButton() : null}
       </div>
     // </Link>
   )
