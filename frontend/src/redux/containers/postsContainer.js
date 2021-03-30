@@ -7,6 +7,7 @@ import Post from '../components/forms/post'
 export default function PostContainer({ route }) {
 
   const posts = useSelector(state => state.posts)
+  const user = useSelector(state => state.user)
   const dispatch = useDispatch()
 
   const submitPost = post => {
@@ -21,7 +22,7 @@ export default function PostContainer({ route }) {
     <div>
       <h1>Posts</h1>
       {posts.length > 0 ? <Posts posts={posts} /> : null }
-      <Post submitPost={submitPost} />
+      <Post submitPost={submitPost} user={user} board={route} />
     </div>
   )
 

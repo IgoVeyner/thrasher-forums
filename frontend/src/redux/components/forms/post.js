@@ -1,13 +1,18 @@
 import { useState } from 'react'
 
-export default function Post() {
+export default function Post({ submitPost, user, board }) {
 
   const [title, setTitle] = useState('')
   const [text, setText] = useState('')
 
   const handleSubmit = event => {
     event.preventDefault()
-    // use a prop from postContainer to submit a post
+    submitPost({ post: { 
+      title,
+      text,
+      username: user,
+      board_name: board
+     }})
   }
 
   const handleChange = e => {
