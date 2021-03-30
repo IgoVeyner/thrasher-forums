@@ -1,4 +1,4 @@
-import { fetchPosts, postPost } from '../../services/api'
+import { fetchPosts } from '../../services/api'
 
 export const getPosts = boardName => {
   return dispatch => {
