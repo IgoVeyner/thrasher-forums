@@ -34,6 +34,20 @@ class PostsController < ApplicationController
     serialized_posts = posts.map {|post| PostSerializer.new(post)}
     render json: {posts: serialized_posts}, status: :accepted
   end
+  
+  def photos
+    board = Board.find_by(name: "photos")
+    posts = Post.where(board_id: board.id)
+    serialized_posts = posts.map {|post| PostSerializer.new(post)}
+    render json: {posts: serialized_posts}, status: :accepted
+  end
+  
+  def events
+    board = Board.find_by(name: "events")
+    posts = Post.where(board_id: board.id)
+    serialized_posts = posts.map {|post| PostSerializer.new(post)}
+    render json: {posts: serialized_posts}, status: :accepted
+  end
 
   private
 

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       resources :auth, only: [:create]
       resources :boards, only: [:index, :show]
       get 'posts/videos', to: "posts#videos"
+      get 'posts/photos', to: "posts#photos"
+      get 'posts/events', to: "posts#events"
       resources :posts, only: [:create, :show, :destroy]
       get 'profile', to: "auth#profile"
     end
