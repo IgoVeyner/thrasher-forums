@@ -28,6 +28,13 @@ class PostsController < ApplicationController
     end
   end
 
+  def videos
+    board = Board.find_by(name: "videos")
+    posts = Post.where(baord_id: board.id)
+    serialized_posts = posts.map {|post| PostSerializer(post)}
+    render json: {posts: seralized_posts}, status: :accepted
+  end
+
   private
 
   def post_params

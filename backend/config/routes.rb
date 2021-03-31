@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create, :show]
       resources :auth, only: [:create]
       resources :boards, only: [:index, :show]
+      get 'posts/videos', to: "boards#videos"
       resources :posts, only: [:create, :show, :destroy]
       get 'profile', to: "auth#profile"
     end
