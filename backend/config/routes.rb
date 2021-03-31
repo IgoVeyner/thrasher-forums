@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       get 'posts/photos', to: "posts#photos"
       get 'posts/events', to: "posts#events"
       resources :posts, only: [:create, :show, :destroy]
+      resources :comments, only: [:create, :destroy]
       get 'profile', to: "auth#profile"
     end
   end
