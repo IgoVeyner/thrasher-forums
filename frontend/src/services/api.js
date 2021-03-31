@@ -36,6 +36,19 @@ export const postPost = post => {
   .then(parseJSON)
 }
 
+export const postComment = comment => {
+  return fetch(URL + "comments", {
+    method: `POST`,
+    hearders: {
+      'Content-Type': 'application/json', 
+      'Accepts': 'application/json',
+      "Authorization": `Bearer ${getToken()}`
+    },
+    body: JSON.stringify(comment)
+  })
+  .then(parseJSON)
+}
+
 export const destroyPost = id => {
   return fetch(URL + `posts/${id}`, {
     method: "DELETE",
