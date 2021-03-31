@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find_by(params[:id])
+    post = Post.find_by_id(params[:id])
 
     if post.valid?
       post.destroy

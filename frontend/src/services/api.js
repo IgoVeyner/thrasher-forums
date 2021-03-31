@@ -45,6 +45,7 @@ export const destroyPost = id => {
       "Authorization": `Bearer ${getToken()}`
     }
   })
+  .then(parseJSON)
 }
 
 const authFetch = path => {
@@ -57,6 +58,5 @@ const authFetch = path => {
 
 export const fetchProfile = () => authFetch("profile")
 export const fetchBoards = () => authFetch("boards")
-// export const fetchPosts = boardName => authFetch(`boards/${boardName}`)
 export const fetchPosts = boardName => authFetch(`posts/${boardName}`)
 export const fetchUser = id => authFetch(`users/${id}`)

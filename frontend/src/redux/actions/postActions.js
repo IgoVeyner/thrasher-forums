@@ -20,8 +20,7 @@ export const removePost = id => {
     dispatch({ type: "FETCHING" })
     destroyPost(id)
     .then(response => {
-      console.log(response)
-      dispatch({ type: "REMOVE_POST", payload: response.id})
+      dispatch({ type: "REMOVE_POST", payload: id})
     })
   }
 }

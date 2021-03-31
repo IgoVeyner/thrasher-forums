@@ -4,11 +4,7 @@ function handlePosts(state = [], action) {
       return action.payload
 
     case "ADD_POST":
-      if (action.payload) {
-        return [...state, action.payload]
-      } else {
-        return state
-      }
+      return [...state, action.payload]
 
     case "REMOVE_POST":
       return state.filter(post => post.id !== action.payload)

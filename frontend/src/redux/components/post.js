@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import { fetchUser } from '../../services/api'
 
 export default function Post({ post, currentUser, deletePost }) {
 
