@@ -1,4 +1,4 @@
-// import Comment from "./comment"
+import Comment from "./comment"
 import uuid from 'react-uuid'
 
 export default function Comments({ comments }) {
