@@ -26,14 +26,25 @@ export const fetchLogin = credentials => {
 export const postPost = post => {
   return fetch(URL + "posts", {
     method: 'POST',
-    headers: { 
-      'Authorization': `Bearer ${getToken()}`,
-      'Content-Type': 'application/json',
-      'Accepts': 'application/json'
+    headers: {
+      'Content-Type': 'application/json', 
+      'Accepts': 'application/json',
+      "Authorization": `Bearer ${getToken()}`
     },
     body: JSON.stringify(post)
   })
   .then(parseJSON)
+}
+
+export const destroyPost = id => {
+  return fetch(URL + `posts/${id}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json', 
+      'Accepts': 'application/json',
+      "Authorization": `Bearer ${getToken()}`
+    }
+  })
 }
 
 const authFetch = path => {
