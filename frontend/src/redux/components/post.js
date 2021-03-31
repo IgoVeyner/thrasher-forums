@@ -5,9 +5,10 @@ export default function Post({ post, currentUser, deletePost }) {
   const user = post.user.username
   const title = post.title
   const id = post.id
+  const createdAt = post.created_at
 
   const renderCreatedAt = () => {
-    const split = post.created_at.split('T')
+    const split = createdAt.split('T')
     const time = split[1].split('.')[0]
     return <p>Created on: {split[0]} at: {time}</p>
   }
