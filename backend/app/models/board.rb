@@ -1,5 +1,6 @@
 class Board < ApplicationRecord
   has_many :posts
+  has_many :comments, through: :posts
   
   validates :name, uniqueness: true
 
