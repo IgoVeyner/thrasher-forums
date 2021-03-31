@@ -10,6 +10,7 @@ import { setToken, clearToken, getToken } from './services/localstorage'
 import NavBar from './redux/components/nav/navbar'
 import { useEffect } from 'react'
 import PostContainer from './redux/containers/postsContainer'
+import PostShowContainer from './redux/containers/postShowContainer'
 import NoMatch from './redux/components/noMatch'
 
 function App() {
@@ -72,6 +73,9 @@ function App() {
         case "photos":
           return <PostContainer route={route} />
 
+        case "posts/:id":
+          return <PostShowContainer />
+        
         default:
           return <Home />
       }
@@ -124,6 +128,10 @@ function App() {
 
             <Route path="/photos" exact >
               {redirectToLoginPreCheck("photos")}
+            </Route>
+
+            <Route path="/posts/:id" exact>
+              {redirectToLoginPreCheck("posts/:id")}
             </Route>
             
             <Route path="/" exact >
