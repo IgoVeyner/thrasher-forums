@@ -3,11 +3,13 @@ import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router'
 import { fetchPost } from '../../services/api'
 import PostShow from '../components/postShow'
+import Comments from '../components/comments'
 
 export default function PostShowContainer(props) {
 
   const { id } = useParams()
   const [post, setPost] = useState('')
+  const [comments, setComments] = useState([])
   const dispatch = useDispatch()
 
   const getPost = () => {
@@ -20,6 +22,9 @@ export default function PostShowContainer(props) {
 
       if (data.post) {
         setPost(data.post)
+        if (data.comments) {
+          setComments(data.comments)
+        }
         dispatch({ type: "SET_POST" })
       }
     })
@@ -28,6 +33,7 @@ export default function PostShowContainer(props) {
   return (
     <>
       {post === '' ? getPost() : <PostShow post={post} /> }
+      {comments.length > 0 ? <Comments comments={comments} /> : null }
     </>
   )
 }

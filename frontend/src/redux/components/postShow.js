@@ -13,7 +13,6 @@ export default function PostShow({ post }) {
 
   return (
     <div>
-      {console.log(post)}
       <h1>{title}</h1>
       <p>{text}</p>
       <p>By: {username}</p>
