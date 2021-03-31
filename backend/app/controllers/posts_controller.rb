@@ -21,7 +21,14 @@ class PostsController < ApplicationController
     post = Post.find_by_id(params[:id])
 
     if post
-      render json: { post: PostSerializer.new(post) }, status: :created
+      if post.comments.length > 0
+        comments = post.comments
+        serialized_comments = comments.map{|comment| CommentSerializer.new(comment)}
+
+        render json: { post: PostSerializer.new(post), comments: serialized_comments }, status: :created
+      else 
+        render json: { post: PostSerializer.new(post) }, status: :created
+      end 
     else
       render json: { error: 'Post not found' }, status: :not_acceptable
     end

@@ -8,12 +8,12 @@ user1 = User.create(username: "Igor", password: "password", email: "temp@email.c
 user2 = User.create(username: "Not_Igor", password: "password", email: "temp2@email.com")
 user3 = User.create(username: "Also_Not_Igor", password: "password", email: "temp3@email.com")
 
-# Create new boards
+# Create Boards
 board_events = Board.create(name: "events", description: "Demo / Tour Dates / Local Events")
 board_videos = Board.create(name: "videos")
 board_photos = Board.create(name: "photos")
 
-# Create new posts
+# Create Posts
   # - Events   
 post_event1 = Post.create(title: "Plan B | Demo | NYC", text: "April 1st, 2021", user_id: user1.id, board_id: board_events.id)
 post_event2 = Post.create(title: "Primitive | Demo | NYC", text: "April 10th, 2021", user_id: user2.id, board_id: board_events.id)
@@ -30,4 +30,7 @@ post_video4 = Post.create(title: "LENZ 3! After 8 years!", text: "The wait is ov
   # - Photos
 post_photo1 = Post.create(title: "Best Thrasher Cover all time?", text: "Jeremy Wray, the Water Tower. Whats your opinion?", user_id: user1.id, board_id: board_photos.id)
 post_photo2 = Post.create(title: "Most Iconic Photo?", text: "Tod Swank by J. Grant Brittan", user_id: user1.id, board_id: board_photos.id)
-post_photo2 = Post.create(title: "Favorite Bobby Puleo photo", text: "50-50 up the handicap rail", user_id: user3.id, board_id: board_photos.id)
+post_photo3 = Post.create(title: "Favorite Bobby Puleo photo", text: "50-50 up the handicap rail", user_id: user3.id, board_id: board_photos.id)
+
+# Create Comments
+comment1 = Comment.create(text: "Nope, it has to be Jamie Foy's Front Crook down El Toro", user_id: user2.id, post_id: post_photo1.id)
