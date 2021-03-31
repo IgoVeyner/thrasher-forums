@@ -2,14 +2,19 @@ import { Link } from 'react-router-dom'
 
 export default function Post({ post, currentUser, deletePost }) {
 
+  const user = post.user.username
+  const title = post.title
+  const id = post.id
+
   const renderCreatedAt = () => {
     const split = post.created_at.split('T')
     const time = split[1].split('.')[0]
     return <p>Created on: {split[0]} at: {time}</p>
   }
 
-  const handleOnClick = () => {
-    deletePost(post.id)
+  const handleOnClick = event => {
+    event.preventDefault() // since the whole component is a link clicking on the button will redirect
+    deletePost(id)
   }
 
   const renderDeleteButton = () => {
@@ -19,14 +24,13 @@ export default function Post({ post, currentUser, deletePost }) {
   }
 
   return (
-    // add link to post show page
-    // <Link to={"/"} >
+    <Link to={`/posts/${id}`} >
       <div>
-        <h2>{post.title}</h2>
+        <h2>{title}</h2>
         {renderCreatedAt()}
-        <p>By: {post.user.username}</p>
-        {currentUser === post.user.username ? renderDeleteButton() : null}
+        <p>By: {user}</p>
+        {currentUser === user ? renderDeleteButton() : null}
       </div>
-    // </Link>
+    </Link>
   )
 }
