@@ -1,4 +1,4 @@
-import { fetchPosts } from '../../services/api'
+import { fetchPosts, destroyPost } from '../../services/api'
 
 export const getPosts = boardName => {
   return dispatch => {
@@ -15,4 +15,13 @@ export const addPost = post => {
   }
 }
 
-// todo: removePost
+export const removePost = id => {
+  return dispatch => {
+    dispatch({ type: "FETCHING" })
+    destroyPost(id)
+    .then(response => {
+      console.log(response)
+      dispatch({ type: "REMOVE_POST", payload: response.id})
+    })
+  }
+}
