@@ -57,5 +57,6 @@ const authFetch = path => {
 
 export const fetchProfile = () => authFetch("profile")
 export const fetchBoards = () => authFetch("boards")
-export const fetchPosts = boardName => authFetch(`boards/${boardName}`)
+// export const fetchPosts = boardName => authFetch(`boards/${boardName}`)
+export const fetchPosts = boardName => authFetch(`posts/${boardName}`)
 export const fetchUser = id => authFetch(`users/${id}`)

@@ -37,7 +37,7 @@ export default function PostContainer({ route }) {
   return (
     <div>
       <h1>Posts</h1>
-      {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={destroyPost} /> : null }
+      {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={deletePost} /> : null }
       <Post submitPost={submitPost} user={user} board={route} />
     </div>
   )
