@@ -29,24 +29,15 @@ class PostsController < ApplicationController
   end
 
   def videos
-    board = Board.find_by(name: "videos")
-    posts = Post.where(board_id: board.id)
-    serialized_posts = posts.map {|post| PostSerializer.new(post)}
-    render json: {posts: serialized_posts}, status: :accepted
+    render json: {posts: serialize_mapper("videos")}, status: :accepted
   end
   
   def photos
-    board = Board.find_by(name: "photos")
-    posts = Post.where(board_id: board.id)
-    serialized_posts = posts.map {|post| PostSerializer.new(post)}
-    render json: {posts: serialized_posts}, status: :accepted
+    render json: {posts: serialize_mapper("photos")}, status: :accepted
   end
   
   def events
-    board = Board.find_by(name: "events")
-    posts = Post.where(board_id: board.id)
-    serialized_posts = posts.map {|post| PostSerializer.new(post)}
-    render json: {posts: serialized_posts}, status: :accepted
+    render json: {posts: serialize_mapper("events")}, status: :accepted
   end
 
   private
@@ -54,4 +45,11 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :text, :board_name, :username)
   end
+
+  def serialize_mapper(name)
+    board = Board.find_by(name: name)
+    posts = Post.where(board_id: board.id)
+    posts.map {|post| PostSerializer.new(post)}
+  end
+
 end
