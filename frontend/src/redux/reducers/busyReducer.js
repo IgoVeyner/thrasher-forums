@@ -7,6 +7,7 @@ function handleBusy(state = false, action) {
     case "SET_USER":
     case "SET_BOARDS":
     case "SET_POSTS":
+    case "SET_POST":
     case "ADD_POST":
     case "REMOVE_POST":
       return false
