@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router'
 import { fetchPost } from '../../services/api'
 import PostShow from '../components/postShow'
 import CommentsContainer from '../containers/commentsContainer'
 
-export default function PostShowContainer(props) {
+export default function PostShowContainer() {
 
   const { id } = useParams()
   const [post, setPost] = useState('')
@@ -33,7 +33,7 @@ export default function PostShowContainer(props) {
   return (
     <>
       {post === '' ? getPost() : <PostShow post={post} /> }
-      {comments.length > 0 ? <CommentsContainer comments={comments} /> : null }
+      {comments.length > 0 ? <CommentsContainer comments={comments} postId={post.id} /> : null }
     </>
   )
 }

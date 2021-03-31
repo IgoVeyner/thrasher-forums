@@ -1,12 +1,16 @@
 import { useState } from 'react'
 
-export default function Comment() {
+export default function Comment({ user, submitComment, postId }) {
 
   const [text, setText] = useState('')
 
   const handleSubmit = event => {
     event.preventDefault()
-    // use submitComment from commentContainer
+    submitComment({ comment: {
+      text,
+      post_id: postId,
+      username: user
+    }})
   }
 
   const handleChange = e => {
@@ -23,7 +27,7 @@ export default function Comment() {
   return (
     <>
       <h2>New Comment</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
 
         <input 
           name="text"

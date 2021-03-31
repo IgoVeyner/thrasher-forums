@@ -39,7 +39,7 @@ export const postPost = post => {
 export const postComment = comment => {
   return fetch(URL + "comments", {
     method: `POST`,
-    hearders: {
+    headers: {
       'Content-Type': 'application/json', 
       'Accepts': 'application/json',
       "Authorization": `Bearer ${getToken()}`
