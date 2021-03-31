@@ -17,10 +17,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def show 
+    post = Post.find_by_id(params[:id])
+
+    if post
+      render json: { post: PostSerializer.new(post) }, status: :created
+    else
+      render json: { error: 'Post not found' }, status: :not_acceptable
+    end
+  end
+
   def destroy
     post = Post.find_by_id(params[:id])
 
-    if post.valid?
+    if post
       post.destroy
       render json: { message: 'Post deleted'}, status: :accepted
     else
