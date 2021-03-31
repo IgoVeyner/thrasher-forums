@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getPosts, addPost } from '../actions/postActions'
-import { postPost } from '../../services/api'
+import { getPosts, addPost, removePost } from '../actions/postActions'
+import { destroyPost, postPost } from '../../services/api'
 import Posts from '../components/posts';
 import Post from '../components/forms/post'
 
@@ -16,6 +16,7 @@ export default function PostContainer({ route }) {
     postPost(post)
     .then(data => {
       if (data.error) {
+        console.log(data)
         alert(data.messages)
       }
 
@@ -25,6 +26,10 @@ export default function PostContainer({ route }) {
     })
   }
 
+  const deletePost = id => {
+    dispatch(removePost(id))
+  }
+
   useEffect(() => {
     dispatch(getPosts(route))
   }, [route])
@@ -32,7 +37,7 @@ export default function PostContainer({ route }) {
   return (
     <div>
       <h1>Posts</h1>
-      {posts.length > 0 ? <Posts posts={posts} user={user} /> : null }
+      {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={destroyPost} /> : null }
       <Post submitPost={submitPost} user={user} board={route} />
     </div>
   )

@@ -10,7 +10,6 @@ function handlePosts(state = [], action) {
         return state
       }
 
-      
     case "REMOVE_POST":
       return state.filter(post => post.id !== action.payload)
 

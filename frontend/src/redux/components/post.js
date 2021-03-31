@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { fetchUser } from '../../services/api'
 
-export default function Post({ post, currentUser }) {
+export default function Post({ post, currentUser, deletePost }) {
 
   const [user, setUser] = useState('')
 
@@ -19,9 +19,13 @@ export default function Post({ post, currentUser }) {
     })
   }
 
+  const handleOnClick = () => {
+    deletePost(post.id)
+  }
+
   const renderDeleteButton = () => {
     return (
-      <button>Delete</button>
+      <button onClick={handleOnClick}>Delete</button>
     )
   }
 
