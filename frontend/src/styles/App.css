@@ -17,13 +17,14 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 
 header {
   display: grid;
-  grid-template-areas: 
-  "a b b"
-  "a b b";
+  grid-template-columns: 30% 70%;
+  grid-template-rows: none;
   margin: 1em 0px;
   height: 7em;
+  width: 100%;
   max-width: 1120px;
-  grid-area: header
+  grid-area: header;
+  justify-self: center;
 }
 
 .logo {
@@ -33,7 +34,6 @@ header {
   display: block;
   height: 5.6em;
   width: 276px;
-  grid-area: a;
   align-self: center;
   justify-self: right;
   color: transparent;
@@ -43,7 +43,6 @@ header {
   margin: 0px 1em;
   height: 4em;
   width: calc(100% - 2em);
-  grid-area: b;
 }
 
 .nav-link {
