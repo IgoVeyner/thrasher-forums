@@ -8,13 +8,13 @@ export default function NavBar({ handleLogout }) {
   const user = useSelector(state => state.user)
 
   return (
-    <>
+    <header>
       <Logo />
       { user !== "" ? 
         <Authorized handleLogout={handleLogout} /> 
         : 
         <Unauthorized /> 
       }
-    </>
+    </header>
   )
 }

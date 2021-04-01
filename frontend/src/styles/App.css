@@ -8,18 +8,35 @@ h1, h2, h3, h4, h5, h6, div, span, a {
   color: white;
 }
 
+header {
+  display: grid;
+  grid-template-areas: 
+  "a b b"
+  "a b b";
+  margin: 1em 0px;
+  height: 7em;
+  max-width: 1120px;
+}
+
 .logo {
   background-image: url("../images/templates.png");
   background-position: 0 -837px;
   background-repeat: no-repeat;
   display: block;
   height: 5.6em;
+  width: 276px;
+  padding-right: 20px;
+  grid-area: a;
+  align-self: center;
+  justify-self: right;
+  color: transparent;
 }
 
 .nav {
   margin: 0px 1em;
   height: 4em;
   width: calc(100% - 2em);
+  grid-area: b;
 }
 
 .nav-link {
