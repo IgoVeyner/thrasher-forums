@@ -1,4 +1,4 @@
-export default function PostShow({ post }) {
+export default function PostShow({ post, deletePost, currentUser }) {
 
   const title = post.title
   const text = post.text
@@ -11,12 +11,19 @@ export default function PostShow({ post }) {
     return <p>Created on: {split[0]} at: {time}</p>
   }
 
+  const renderDeleteButton = () => {
+    return (
+      <button onClick={() => deletePost(post.id)}>Delete</button>
+    )
+  }
+
   return (
     <div>
       <h1>{title}</h1>
       <p>{text}</p>
       <p>By: {username}</p>
       {renderCreatedAt()}
+      {currentUser === username ? renderDeleteButton() : null}
     </div>
   )
 }

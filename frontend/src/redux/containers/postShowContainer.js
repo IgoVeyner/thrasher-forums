@@ -1,16 +1,20 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
 import { fetchPost } from '../../services/api'
 import { setComments } from '../actions/commentActions'
 import PostShow from '../components/postShow'
 import CommentsContainer from '../containers/commentsContainer'
+import { removePost } from '../actions/postActions'
+import noMatch from '../components/noMatch'
+import NoMatch from '../components/noMatch'
 
 export default function PostShowContainer() {
 
   const { id } = useParams()
   const [post, setPost] = useState('')
   const comments = useSelector(state => state.comments)
+  const currentUser = useSelector(state => state.user)
   const dispatch = useDispatch()
 
   const getPost = () => {
@@ -31,10 +35,19 @@ export default function PostShowContainer() {
     })
   }
 
+  const deletePost = id => {
+    dispatch(removePost(id))
+    setPost('')
+  }
+
+  useEffect(() => {
+    getPost()
+  }, [])
+
   return (
     <>
-      {post === '' ? getPost() : <PostShow post={post} /> }
-      {comments.length > 0 ? <CommentsContainer comments={comments} postId={post.id} /> : null }
+      {post === '' ? null : <PostShow post={post} deletePost={deletePost} currentUser={currentUser} /> }
+      {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} /> }
     </>
   )
 }
