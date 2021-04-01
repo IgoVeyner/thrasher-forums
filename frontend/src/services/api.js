@@ -61,6 +61,18 @@ export const destroyPost = id => {
   .then(parseJSON)
 }
 
+export const destroyComment = id => {
+  return fetch(URL + `comments/${id}`, {
+    method: "DELETE",
+    headers: {
+      'Content-Type': 'application/json', 
+      'Accepts': 'application/json',
+      "Authorization": `Bearer ${getToken()}`
+    }
+  })
+  .then(parseJSON)
+}
+
 const authFetch = path => {
   return fetch(URL + path, {
     headers: authHeaders()
