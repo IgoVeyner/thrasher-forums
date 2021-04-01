@@ -59,11 +59,45 @@ header {
 
 .dummy {
   color: transparent;
+  margin: 0px 1%;
 }
 
 .dummy:hover {
   cursor: pointer;
 }
+
+.dummy-form-container {
+  display: inline;
+}
+
+.dummy-form {
+  display: inline;
+}
+
+.dummy-input {
+  padding: 0px;
+  border: 0px;
+  height: 20.6px;
+  position: relative;
+  top: -3px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  font-weight: bold;
+}
+
+.dummy-input:focus {
+  border: none;
+  outline: none;
+}
+
+.dummy-label {
+  background-image: url("../images/templates.png");
+  background-position: -129px -197px;
+  color: transparent;
+  padding-right: 22px;
+  background-color: white;
+}
+
 
 #mail {
   background-image: url("../images/templates.png");
