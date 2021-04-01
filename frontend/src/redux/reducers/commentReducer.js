@@ -1,4 +1,4 @@
-function handleComments(state = [], action) {
+export default function handleComments(state = [], action) {
   switch (action.type) {
     case "SET_COMMENTS":
       return action.payload
@@ -10,6 +10,6 @@ function handleComments(state = [], action) {
       return state.filter(comment => comment.id !== action.payload)
   
     default:
-      break
+      return state
   }
 }

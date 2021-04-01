@@ -1,5 +1,11 @@
 import { destroyComment } from '../../services/api'
 
+export const setComments = comments => {
+  return dispatch => {
+    dispatch({ type: "SET_COMMENTS", payload: comments})
+  }
+}
+
 export const addComment = comment => {
   return dispatch => {
     dispatch({ type: "ADD_COMMENT", payload: comment })
