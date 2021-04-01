@@ -1,3 +1,5 @@
+import DummyForm from '../forms/dummyForm';
+
 export default function Dummy() {
   return (
     <nav className="dummy-nav" >
@@ -6,7 +8,7 @@ export default function Dummy() {
       <span className="dummy" id="instagram">i</span>
       <span className="dummy" id="twitter">t</span>
       <span className="dummy" id="youtube">y</span>
-      {/* dummy searchbar */}
+      <DummyForm />
     </nav>
   )
 }
