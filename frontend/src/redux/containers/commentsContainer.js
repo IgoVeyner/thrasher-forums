@@ -13,7 +13,6 @@ export default function CommentContainer({ comments, postId }) {
     dispatch({ type: "FETCHING" })
     postComment(comment)
     .then(data => {
-      console.log(data)
       if (data.error) {
         alert(data.messages)
       }
