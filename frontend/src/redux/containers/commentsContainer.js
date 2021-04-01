@@ -24,9 +24,13 @@ export default function CommentContainer({ comments, postId }) {
     })
   }
 
+  const deleteComment = id => {
+    // dispatch(removeComment(id))
+  }
+
   return (
     <>
-      <Comments comments={comments} />
+      <Comments comments={comments} currentUser={user} deleteComment={deleteComment} />
       <Comment user={user} submitComment={submitComment} postId={postId} />
     </>
   )

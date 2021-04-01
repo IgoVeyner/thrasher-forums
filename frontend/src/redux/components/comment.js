@@ -1,4 +1,4 @@
-export default function Comment({ comment }) {
+export default function Comment({ comment, deleteComment, currentUser }) {
 
   const username = comment.user.username
   const text = comment.text
@@ -10,6 +10,8 @@ export default function Comment({ comment }) {
     return <p>Created on: {split[0]} at: {time}</p>
   }
   
+  console.log(currentUser)
+
   return (
     <div>
       <p>User: {username}</p>
