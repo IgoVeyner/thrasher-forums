@@ -8,6 +8,13 @@ h1, h2, h3, h4, h5, h6, div, span, a {
   color: white;
 }
 
+#root {
+  display: grid;
+  grid-template-areas: 
+  "header"
+  "main";
+}
+
 header {
   display: grid;
   grid-template-areas: 
@@ -16,6 +23,7 @@ header {
   margin: 1em 0px;
   height: 7em;
   max-width: 1120px;
+  grid-area: header
 }
 
 .logo {
@@ -48,4 +56,8 @@ header {
 .thrasher {
   font-family: 'Open Sans', sans-serif;
   color: white;
+}
+
+main {
+  grid-area: main;
 }
