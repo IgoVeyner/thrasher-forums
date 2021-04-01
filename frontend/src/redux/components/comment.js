@@ -9,14 +9,19 @@ export default function Comment({ comment, deleteComment, currentUser }) {
     const time = split[1].split('.')[0]
     return <p>Created on: {split[0]} at: {time}</p>
   }
-  
-  console.log(currentUser)
 
+  const renderDeleteButton = () => {
+    return (
+      <button onClick={deleteComment} >Delete</button>
+    )
+  }
+  
   return (
     <div>
       <p>User: {username}</p>
       <p>{text}</p>
       {renderCreatedAt()}
+      {currentUser === username ? renderDeleteButton() : null}
     </div>
   )
 }

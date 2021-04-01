@@ -34,7 +34,7 @@ export default function PostShowContainer() {
   return (
     <>
       {post === '' ? getPost() : <PostShow post={post} /> }
-      {comments && comments.length > 0 ? <CommentsContainer comments={comments} postId={post.id} /> : null }
+      {comments.length > 0 ? <CommentsContainer comments={comments} postId={post.id} /> : null }
     </>
   )
 }
