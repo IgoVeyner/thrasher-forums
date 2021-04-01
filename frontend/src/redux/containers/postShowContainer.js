@@ -6,7 +6,6 @@ import { setComments } from '../actions/commentActions'
 import PostShow from '../components/postShow'
 import CommentsContainer from '../containers/commentsContainer'
 import { removePost } from '../actions/postActions'
-import noMatch from '../components/noMatch'
 import NoMatch from '../components/noMatch'
 
 export default function PostShowContainer() {
