@@ -15,6 +15,17 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    comment = Comment.find_by_id(params[:id])
+
+    if comment
+      comment.destroy
+      render json: { message: 'Comment deleted'}, status: :accepted
+    else
+      render json: { error: 'Comment not found' }, status: :not_acceptable
+    end
+  end
+
   private
 
   def comment_params
