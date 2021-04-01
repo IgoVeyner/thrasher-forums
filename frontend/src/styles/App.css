@@ -70,7 +70,35 @@ header {
   background-position: -273px -92px;
   width: 50px;
   height: 22px;
-  padding-right: 20px;
+  padding-right: 38px;
+}
+
+#facebook {
+  background-image: url("../images/templates.png");
+  background-position: -322px -48px;
+  height: 22px;
+  padding-right: 21px;
+}
+
+#instagram {
+  background-image: url("../images/templates.png");
+  background-position: -94px -253px;
+  height: 22px;
+  padding-right: 21px;
+}
+
+#twitter {
+  background-image: url("../images/templates.png");
+  background-position: -120px -253px;
+  height: 22px;
+  padding-right: 22px;
+}
+
+#youtube {
+  background-image: url("../images/templates.png");
+  background-position: -289px -70px;
+  height: 22px;
+  padding-right: 49px;
 }
 
 main {
