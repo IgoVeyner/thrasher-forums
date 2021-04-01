@@ -12,7 +12,7 @@ export default function Comment({ comment, deleteComment, currentUser }) {
 
   const renderDeleteButton = () => {
     return (
-      <button onClick={deleteComment} >Delete</button>
+      <button onClick={deleteComment(comment.id)} >Delete</button>
     )
   }
   

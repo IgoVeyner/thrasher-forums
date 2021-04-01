@@ -1,7 +1,7 @@
 import Comments from '../components/comments'
 import Comment from '../components/forms/comment'
 import { postComment } from '../../services/api'
-import { addComment } from '../actions/commentActions'
+import { addComment, removeComment } from '../actions/commentActions'
 import { useDispatch, useSelector } from 'react-redux'
 
 export default function CommentContainer({ comments, postId }) {
@@ -25,7 +25,7 @@ export default function CommentContainer({ comments, postId }) {
   }
 
   const deleteComment = id => {
-    // dispatch(removeComment(id))
+    dispatch(removeComment(id))
   }
 
   return (
