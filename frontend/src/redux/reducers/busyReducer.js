@@ -10,6 +10,9 @@ function handleBusy(state = false, action) {
     case "SET_POST":
     case "ADD_POST":
     case "REMOVE_POST":
+    case "SET_COMMENTS":
+    case "ADD_COMMENT":
+    case "REMOVE_COMMENT":
       return false
 
     default:
