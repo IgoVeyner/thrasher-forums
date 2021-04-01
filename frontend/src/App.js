@@ -147,9 +147,9 @@ function App() {
   }
 
   return (
-    <div className="background" >
+    <>
       {checkForTokenAndUser()}
-    </div>
+    </>
   )
 }
 
