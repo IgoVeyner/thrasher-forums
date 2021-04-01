@@ -1,4 +1,4 @@
-import './App.css'
+import './styles/App.css'
 import Home from './redux/components/home'
 import SignupForm from './redux/components/forms/signup'
 import LoginForm from './redux/components/forms/login'
