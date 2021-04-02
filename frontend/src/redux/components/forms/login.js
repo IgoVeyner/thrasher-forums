@@ -30,23 +30,31 @@ export default function LoginForm({ handleLogin }) {
       <div id="login-form-container">
 
         <form id="login-form" onSubmit={handleSubmit}>
+
           <div id="login-header-container">
             <h2 id="login-header">LOGIN</h2> 
           </div>
 
-          <input type="text"
-            name="username"
-            onChange={handleChange}
-            value={username}
-            placeholder="username"
-            />
+          <div className="login-input-container">
+            <label className="login-label">username</label>
 
-          <input type="text"
-            name="password"
-            onChange={handleChange}
-            value={password}
-            placeholder="password"
+            <input type="text"
+              name="username"
+              onChange={handleChange}
+              value={username}
             />
+          </div>
+
+
+          <div className="login-input-container">
+            <label className="login-label">password</label>
+
+            <input type="password"
+              name="password"
+              onChange={handleChange}
+              value={password}
+            />
+          </div>
 
           <input type="submit" value="Login" />
 

@@ -171,21 +171,38 @@ main {
   border: 8px black solid;
   background-color: white;
   padding: 12px;
+  display: grid;
+  min-width: 600px;
 }
 
 #login-header-container {
   background-color: black;
   width: 100px;
   height: 30px;
-  transform: skewX(-10deg);
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin: 1em 0px;
 }
 
 #login-header {
-  /* color: orange; */
   position: relative;
   top: -2px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
-  transform: skewX(10deg);
+  transform: skewX(7deg);
   margin: 0px;
+}
+
+.login-input-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 200px;
+  justify-self: center;
+}
+
+.login-label {
+  color: #666666;
+  margin-top: 10px;
+  margin-bottom: 6px;
 }
