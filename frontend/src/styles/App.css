@@ -230,6 +230,7 @@ main {
   color: #666666;
   margin-top: 10px;
   margin-bottom: 6px;
+  font-size: 0.85em;
 }
 
 .login-input, .signup-input {
