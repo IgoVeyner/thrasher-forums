@@ -1,7 +1,7 @@
+import { Link } from 'react-router-dom' 
+
 export default function Logo() {
   return (
-    <div className="logo" >
-      logo
-    </div>
+    <Link to="/" className="logo" />
   )
 }
