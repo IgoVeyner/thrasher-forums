@@ -38,12 +38,12 @@ header {
   align-self: center;
   justify-self: left;
   color: transparent;
+  cursor: pointer;
 }
 
 .nav {
-  margin: 0px 1em;
-  height: 4em;
-  width: calc(100% - 2em);
+  display: flex;
+  justify-content: flex-end;
 }
 
 .nav-link {
