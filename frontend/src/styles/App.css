@@ -200,6 +200,24 @@ main {
   margin: 0px;
 }
 
+#signup-header-container {
+  background-color: black;
+  width: 115px;
+  height: 30px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin: 1em 0px;
+}
+
+#signup-header {
+  position: relative;
+  top: -2px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
+}
+
 .login-input-container, .signup-input-container {
   display: flex;
   flex-direction: column;
