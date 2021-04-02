@@ -39,6 +39,7 @@ header {
   justify-self: left;
   color: transparent;
   cursor: pointer;
+  margin-left: 20px;
 }
 
 .nav {
@@ -151,8 +152,20 @@ header {
   display: grid;
   grid-template-columns: none;
   grid-template-rows: 60% 40%;
+  margin-right: 20px;
 }
 
 main {
   grid-area: main;
+  display: grid;
+  margin: 0px 20px;
+}
+
+#login-form-container {
+  background-image: url("../images/metal.jpg");
+  justify-self: center;
+  padding: 8px;
+}
+
+#login-form {
 }
