@@ -69,6 +69,8 @@ header {
 .dummy-form-container {
   display: inline;
   margin-left: 3%;
+  position: relative;
+  top: 2px;
 }
 
 .dummy-form {
@@ -76,14 +78,15 @@ header {
 }
 
 .dummy-input {
-  padding: 0px;
   border: 0px;
   height: 20.6px;
   position: relative;
   top: -4px;
-  padding-bottom: 1px;
+  padding-bottom: 2px;
   padding-left: 5px;
   font-weight: bold;
+  padding-top: 3px;
+  font-size: 14px;
 }
 
 .dummy-input:focus {
@@ -93,9 +96,10 @@ header {
 
 .dummy-label {
   background-image: url("../images/templates.png");
-  background-position: -129px -197px;
+  background-position: -130px -196px;
   color: transparent;
   padding-right: 22px;
+  padding-top: 4px;
   background-color: white;
 }
 
