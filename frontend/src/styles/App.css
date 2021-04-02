@@ -240,6 +240,7 @@ main {
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   cursor: pointer;
+  color: white;
 }
 
 .button:focus {
@@ -247,11 +248,19 @@ main {
 }
 
 .login-button {
-  color: white;
   background-color: var(--button-blue);
   transition: background-color 0.2s ease-in-out;
 }
 
 .login-button:hover {
   background-color: var(--button-blue-hover);
+}
+
+.signup-button {
+  background-color: var(--button-green);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.signup-button:hover {
+  background-color: var(--button-green-hover);
 }
