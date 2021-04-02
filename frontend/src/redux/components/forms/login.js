@@ -28,7 +28,6 @@ export default function LoginForm({ handleLogin }) {
   return (
     <main>
       <div id="login-form-container">
-
         <form id="login-form" onSubmit={handleSubmit}>
 
           <div id="login-header-container">

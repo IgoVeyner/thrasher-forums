@@ -35,6 +35,9 @@ export default function SignupForm({ handleSignup }) {
       <div id="signup-form-container">
         <form id="signup-form" onSubmit={handleSubmit}>
 
+          <div id="signup-header-container">
+            <h2 id="signup-header">SIGNUP</h2> 
+          </div>
 
           <div className="signup-input-container">
             <label className="signup-label">username</label>
@@ -49,7 +52,7 @@ export default function SignupForm({ handleSignup }) {
           </div>
 
           <div className="signup-input-container">
-            <label className="signup-label">username</label>
+            <label className="signup-label">email</label>
 
             <input 
               className="signup-input"
@@ -74,7 +77,6 @@ export default function SignupForm({ handleSignup }) {
 
           <div className="signup-button-container">
             <input 
-            // add signup-button style
               className="button signup-button"
               type="submit" 
               value="Create Account" 
