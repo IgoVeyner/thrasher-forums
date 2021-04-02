@@ -283,3 +283,19 @@ main {
 .signup-button:hover {
   background-color: var(--button-green-hover);
 }
+
+#logout {
+  font-size: 1.5rem;
+  margin: 0px 0.5em;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0px;
+  border: none;
+  position: relative;
+  top: -6px;
+  cursor: pointer;
+}
+
+#logout:active {
+  outline: none;
+}

@@ -28,7 +28,11 @@ export default function Authorized({ handleLogout }) {
         </span>
       </Link>
 
-      <button onClick={handleLogout}>LOGOUT</button>
+      <button onClick={handleLogout} id="logout">
+        <span className="thrasher" >
+          LOGOUT
+        </span>
+      </button>
     </nav>
   )
 }
