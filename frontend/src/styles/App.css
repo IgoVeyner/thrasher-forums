@@ -168,4 +168,24 @@ main {
 }
 
 #login-form {
+  border: 8px black solid;
+  background-color: white;
+  padding: 12px;
+}
+
+#login-header-container {
+  background-color: black;
+  width: 100px;
+  height: 30px;
+  transform: skewX(-10deg);
+}
+
+#login-header {
+  /* color: orange; */
+  position: relative;
+  top: -2px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(10deg);
+  margin: 0px;
 }

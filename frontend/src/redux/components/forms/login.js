@@ -28,7 +28,11 @@ export default function LoginForm({ handleLogin }) {
   return (
     <main>
       <div id="login-form-container">
+
         <form id="login-form" onSubmit={handleSubmit}>
+          <div id="login-header-container">
+            <h2 id="login-header">LOGIN</h2> 
+          </div>
 
           <input type="text"
             name="username"
