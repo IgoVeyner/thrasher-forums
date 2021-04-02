@@ -67,7 +67,7 @@ header {
 
 .dummy {
   color: transparent;
-  margin: 0px 1%;
+  margin: 0px 1.5%;
 }
 
 .dummy:hover {
@@ -217,7 +217,7 @@ main {
 .login-input {
   font-weight: bold;
   font-size: 14px;
-  padding: 3px;
+  padding: 3px 3px 3px 10px;
 }
 
 .login-input:focus {
