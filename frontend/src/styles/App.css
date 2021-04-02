@@ -168,13 +168,13 @@ main {
   margin: 0px 20px;
 }
 
-#login-form-container {
+#login-form-container, #signup-form-container {
   background-image: url("../images/metal.jpg");
   justify-self: center;
   padding: 8px;
 }
 
-#login-form {
+#login-form, #signup-form {
   border: 8px black solid;
   background-color: white;
   padding: 12px;
@@ -200,7 +200,7 @@ main {
   margin: 0px;
 }
 
-.login-input-container {
+.login-input-container, .signup-input-container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -208,7 +208,7 @@ main {
   justify-self: center;
 }
 
-.login-label {
+.login-label, .signup-label {
   color: #666666;
   margin-top: 10px;
   margin-bottom: 6px;
@@ -224,7 +224,7 @@ main {
   outline: none;
 }
 
-.login-button-container {
+.login-button-container, .signup-button-container {
   justify-self: center;
   margin-top: 36px;
   margin-bottom: 12px;
