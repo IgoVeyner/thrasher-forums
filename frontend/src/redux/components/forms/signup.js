@@ -40,6 +40,7 @@ export default function SignupForm({ handleSignup }) {
             <label className="signup-label">username</label>
 
             <input 
+              className="signup-input"
               type="text"
               name="username"
               onChange={handleChange}
@@ -50,22 +51,24 @@ export default function SignupForm({ handleSignup }) {
           <div className="signup-input-container">
             <label className="signup-label">username</label>
 
-            <input type="text"
+            <input 
+              className="signup-input"
+              type="text"
               name="email"
               onChange={handleChange}
               value={email}
-              placeholder="email"
-              />
+            />
           </div>
 
           <div className="signup-input-container">
             <label className="signup-label">password</label>
 
-            <input type="text"
+            <input 
+              className="signup-input"
+              type="password"
               name="password"
               onChange={handleChange}
               value={password}
-              placeholder="password"
             />
           </div>
 

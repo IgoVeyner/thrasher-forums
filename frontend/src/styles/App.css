@@ -214,13 +214,13 @@ main {
   margin-bottom: 6px;
 }
 
-.login-input {
+.login-input, .signup-input {
   font-weight: bold;
   font-size: 14px;
   padding: 3px 3px 3px 10px;
 }
 
-.login-input:focus {
+.login-input:focus, .signup-input:focus {
   outline: none;
 }
 
