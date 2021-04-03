@@ -169,6 +169,7 @@ header {
 main {
   grid-area: main;
   display: grid;
+  margin-bottom: 2em;
 }
 
 /* Login & Signup page styling */
@@ -223,7 +224,7 @@ main {
   margin: 0px;
 }
 
-.login-input-container, .signup-input-container {
+.login-input-container, .signup-input-container, .post-input-container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -231,14 +232,14 @@ main {
   justify-self: center;
 }
 
-.login-label, .signup-label {
+.login-label, .signup-label, .post-label {
   color: #666666;
   margin-top: 10px;
   margin-bottom: 6px;
   font-size: 0.85em;
 }
 
-.login-input, .signup-input {
+.login-input, .signup-input, .post-input {
   font-weight: bold;
   font-size: 14px;
   padding: 3px 3px 3px 10px;
@@ -326,7 +327,6 @@ main {
   position: relative;
   top: -7px;
 }
-
 
 /* Board index styling */
 
@@ -453,4 +453,18 @@ main {
   transform: skewX(7deg);
   margin: 0px;
   left: 1px;
+}
+
+#post-form {
+  margin: 8px;
+  display: grid;
+}
+
+.post-textarea-input {
+  width: 350px;
+  height: 200px;
+  align-self: center;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 3px 3px 3px 10px;
 }
