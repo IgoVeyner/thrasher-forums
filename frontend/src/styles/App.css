@@ -427,7 +427,30 @@ main {
   margin-right: 12px;
 }
 
+/* Post Form styling */
+
 #post-form-container {
   border: 4px solid black;
   margin-bottom: 1em;
+}
+
+#post-form-header-container {
+  background-color: black;
+  width:  175px;
+
+  height: 34px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+#post-form-header {
+  position: relative;
+  top: -6px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
+  left: 1px;
 }

@@ -32,7 +32,10 @@ export default function Post({ submitPost, user, board }) {
 
   return (
     <>
-      <h2>New Post</h2>
+      <div id="post-form-header-container">
+        <h1 id="post-form-header">New Post</h1>
+      </div>
+
       <div id="post-form-container">
         
         <form onSubmit={handleSubmit}>
