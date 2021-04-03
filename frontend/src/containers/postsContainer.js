@@ -39,7 +39,11 @@ export default function PostContainer({ route }) {
       <div id="posts-container">
         <div id="posts-sub-container">
           
-          <h1>Posts</h1>
+          <div id="posts-header-container">
+            <h1 id="posts-header">Posts</h1>
+          </div>
+
+
           {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={deletePost} /> : null }
           <Post submitPost={submitPost} user={user} board={route} />
 

@@ -373,3 +373,23 @@ main {
 }
 
 /* Posts index styling */
+
+#posts-header-container {
+  background-color: black;
+  width: 110px;
+  height: 34px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+#posts-header {
+  position: relative;
+  top: -6px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
+  left: 1px;
+}
