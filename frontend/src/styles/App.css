@@ -339,3 +339,32 @@ main {
   transform: skewX(7deg);
   margin: 0px;
 }
+
+#boards-list-container {
+  background-color: black;
+}
+
+.board-link {
+  text-decoration: none;
+}
+
+.board-text {
+  background-color: white;
+  margin: 4px 4px;
+}
+
+.board-title {
+  margin: 0px;
+  padding: 8px 0px 8px 20px;
+  font-size: 24px;
+  font-weight: 900;
+  text-transform: capitalize;
+  color: black;
+}
+
+.board-description {
+  padding: 0px 0px 8px 20px;
+  margin: 0px;
+  font-size: 14px;
+  color: #666666;
+}

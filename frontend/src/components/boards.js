@@ -10,7 +10,7 @@ export default function Boards({ boards }) {
   }
   
   return (
-    <div>
+    <div id="boards-list-container">
       {renderBoards()}
     </div>
   )

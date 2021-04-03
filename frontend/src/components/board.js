@@ -4,14 +4,14 @@ export default function Board({ board }) {
 
   const renderDescription = () => {
     if (board.description) {
-      return <p>{board.description}</p>
+      return <p className="board-description">{board.description}</p>
     }
   }
 
   return (
-    <Link to={`/${board.name.toLowerCase()}`}>
-      <div>
-        <p>{board.name}</p>
+    <Link to={`/${board.name.toLowerCase()}`} className="board-link">
+      <div className="board-text">
+        <h2 className="board-title">{board.name}</h2>
         {renderDescription()}
       </div>
     </Link>
