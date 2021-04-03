@@ -23,6 +23,8 @@ h1, h2, h3, h4, h5, h6, div, span, a {
   "main";
 }
 
+/* Nav Bar Styling */
+
 header {
   display: grid;
   grid-template-columns: 30% 70%;
@@ -64,6 +66,8 @@ header {
   font-family: 'Open Sans', sans-serif;
   color: white;
 }
+
+/* Dummy Nav Styling */
 
 .dummy {
   color: transparent;
@@ -168,6 +172,8 @@ main {
   margin: 0px 20px;
 }
 
+/* Login & Signup page styling */
+
 #login-form-container, #signup-form-container {
   background-image: url("../images/metal.jpg");
   justify-self: center;
@@ -243,6 +249,8 @@ main {
   outline: none;
 }
 
+/* Button Styling */
+
 .login-button-container, .signup-button-container {
   justify-self: center;
   margin-top: 36px;
@@ -299,3 +307,5 @@ main {
 #logout:active {
   outline: none;
 }
+
+/* Board index styling */
