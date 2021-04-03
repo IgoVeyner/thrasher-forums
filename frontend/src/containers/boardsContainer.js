@@ -17,8 +17,8 @@ export default function BoardsContainer() {
       <div id="boards-container">
         <div id="boards-sub-container">
         
-        <div>
-          <h1>Boards</h1>
+        <div id="boards-header-container">
+          <h1 id="boards-header">Boards</h1>
         </div>
 
         {boards.length > 0 ? <Boards boards={boards} /> : null }

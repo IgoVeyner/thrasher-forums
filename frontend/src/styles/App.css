@@ -319,4 +319,23 @@ main {
   border: black 8px solid;
   padding: 12px;
   background-color: white;
+  display: grid;
+}
+
+#boards-header-container {
+  background-color: black;
+  width: 125px;
+  height: 34px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin: 1em 0px;
+}
+
+#boards-header {
+  position: relative;
+  top: -6px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
 }
