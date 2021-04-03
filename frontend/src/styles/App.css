@@ -307,14 +307,14 @@ main {
 
 /* Board index styling */
 
-#boards-container {
+#boards-container, #posts-container {
   width: 100%;
   max-width: 1120px;
   justify-self: center;
   background-image: url("../images/metal.jpg");
 }
 
-#boards-sub-container {
+#boards-sub-container, #posts-sub-container {
   margin: 8px;
   border: black 8px solid;
   padding: 12px;
@@ -371,3 +371,5 @@ main {
   font-size: 14px;
   color: #666666;
 }
+
+/* Posts index styling */
