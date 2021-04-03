@@ -328,7 +328,8 @@ main {
   height: 34px;
   transform: skewX(-7deg);
   justify-self: center;
-  margin: 1em 0px;
+  margin-top: 1em;
+  margin-bottom: 2em;
 }
 
 #boards-header {
@@ -338,10 +339,12 @@ main {
   font-family: 'Open Sans', sans-serif;
   transform: skewX(7deg);
   margin: 0px;
+  left: 1px;
 }
 
 #boards-list-container {
   background-color: black;
+  margin-bottom: 1em;
 }
 
 .board-link {
