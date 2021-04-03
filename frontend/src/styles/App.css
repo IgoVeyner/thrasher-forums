@@ -307,6 +307,27 @@ main {
   outline: none;
 }
 
+.delete {
+  width: 100px;
+  position: relative;
+  justify-self: end;
+  top: 10px;
+  right: 10px;
+  height: 30px;
+  width: 75px;
+  background-color: var(--button-red);
+}
+
+.delete:hover {
+  background-color: var(--button-red-hover);
+}
+
+.delete-text {
+  position: relative;
+  top: -7px;
+}
+
+
 /* Board index styling */
 
 #boards-container, #posts-container {
@@ -399,26 +420,6 @@ main {
 .post-text {
   display: grid;
   grid-template-columns: 3fr 1fr;
-}
-
-.index-delete {
-  width: 100px;
-  position: relative;
-  justify-self: end;
-  top: 10px;
-  right: 10px;
-  height: 30px;
-  width: 75px;
-  background-color: var(--button-red);
-}
-
-.index-delete:hover {
-  background-color: var(--button-red-hover);
-}
-
-.delete-text {
-  position: relative;
-  top: -7px;
 }
 
 .time {
