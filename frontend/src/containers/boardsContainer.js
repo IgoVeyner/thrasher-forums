@@ -13,9 +13,11 @@ export default function BoardsContainer() {
   }, []);
 
   return (
-    <div>
-      <h1>Boards</h1>
-      {boards.length > 0 ? <Boards boards={boards} /> : null }
-    </div>
+    <main>
+      <div id="boards-container">
+        <h1>Boards</h1>
+        {boards.length > 0 ? <Boards boards={boards} /> : null }
+      </div>
+    </main>
   )
 }
