@@ -10,7 +10,7 @@ export default function Post({ post, currentUser, deletePost }) {
   const renderCreatedAt = () => {
     const split = createdAt.split('T')
     const time = split[1].split('.')[0]
-    return <p>Created on: {split[0]} at: {time}</p>
+    return <p className="post-description time">c: {split[0]} | at: {time}</p>
   }
 
   const handleOnClick = event => {
@@ -21,7 +21,9 @@ export default function Post({ post, currentUser, deletePost }) {
   const renderDeleteButton = () => {
     return (
       <button onClick={handleOnClick} className="index-delete button">
-        Delete
+        <span className="delete-x">
+          delete
+        </span>
       </button>
     )
   }
@@ -30,9 +32,9 @@ export default function Post({ post, currentUser, deletePost }) {
     <Link to={`/posts/${id}`} className="post-link" >
       <div className="post-text">
         <h2 className="post-title">{title}</h2>
-        {currentUser === user ? renderDeleteButton() : null}
+        {currentUser === user ? renderDeleteButton() : <p></p>}
+        <p className="post-description">u: {user}</p>
         {renderCreatedAt()}
-        <p>By: {user}</p>
       </div>
     </Link>
   )
