@@ -63,7 +63,13 @@ export default function Post({ submitPost, user, board }) {
             />
           </div>
 
-          <input type="submit" value="Post" />
+          <div className="post-button-container">
+            <input 
+              className="button signup-button"
+              type="submit" 
+              value="Post" 
+            />
+          </div>
 
         </form>
       </div>
