@@ -20,17 +20,19 @@ export default function Post({ post, currentUser, deletePost }) {
 
   const renderDeleteButton = () => {
     return (
-      <button onClick={handleOnClick}>Delete</button>
+      <button onClick={handleOnClick} className="index-delete button">
+        Delete
+      </button>
     )
   }
 
   return (
-    <Link to={`/posts/${id}`} >
-      <div>
-        <h2>{title}</h2>
+    <Link to={`/posts/${id}`} className="post-link" >
+      <div className="post-text">
+        <h2 className="post-title">{title}</h2>
+        {currentUser === user ? renderDeleteButton() : null}
         {renderCreatedAt()}
         <p>By: {user}</p>
-        {currentUser === user ? renderDeleteButton() : null}
       </div>
     </Link>
   )

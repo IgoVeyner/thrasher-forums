@@ -9,7 +9,7 @@ export default function Board({ board }) {
   }
 
   return (
-    <Link to={`/${board.name.toLowerCase()}`} className="board-link">
+    <Link to={`/${board.name.toLowerCase()}`} className="board-link" >
       <div className="board-text">
         <h2 className="board-title">{board.name}</h2>
         {renderDescription()}

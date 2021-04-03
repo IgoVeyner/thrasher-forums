@@ -3,6 +3,8 @@
   --button-blue-hover: #199CFE;
   --button-green: #36AD47;
   --button-green-hover: #1ac933;
+  --button-red: #cd4e38;
+  --button-red-hover: #E33332;
 }
 
 html {
@@ -342,21 +344,21 @@ main {
   left: 1px;
 }
 
-#boards-list-container {
+#boards-list-container, #posts-list-container {
   background-color: black;
   margin-bottom: 1em;
 }
 
-.board-link {
+.board-link, .post-link {
   text-decoration: none;
 }
 
-.board-text {
+.board-text, .post-text {
   background-color: white;
   margin: 4px 4px;
 }
 
-.board-title {
+.board-title, .post-title {
   margin: 0px;
   padding: 8px 0px 8px 20px;
   font-size: 24px;
@@ -392,4 +394,24 @@ main {
   transform: skewX(7deg);
   margin: 0px;
   left: 1px;
+}
+
+.post-text {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+}
+
+.index-delete {
+  width: 100px;
+  position: relative;
+  justify-self: end;
+  top: 10px;
+  right: 10px;
+  height: 45px;
+  width: 90px;
+  background-color: var(--button-red);
+}
+
+.index-delete:hover {
+  background-color: var(--button-red-hover);
 }

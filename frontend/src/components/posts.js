@@ -10,7 +10,7 @@ export default function Posts({ posts, user, deletePost }) {
   }
   
   return (
-    <div>
+    <div id="posts-list-container">
       {renderPosts()}
     </div>
   )
