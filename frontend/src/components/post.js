@@ -21,7 +21,7 @@ export default function Post({ post, currentUser, deletePost }) {
   const renderDeleteButton = () => {
     return (
       <button onClick={handleOnClick} className="index-delete button">
-        <span className="delete-x">
+        <span className="delete-text">
           delete
         </span>
       </button>

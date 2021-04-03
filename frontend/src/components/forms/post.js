@@ -33,25 +33,28 @@ export default function Post({ submitPost, user, board }) {
   return (
     <>
       <h2>New Post</h2>
-      <form onSubmit={handleSubmit}>
+      <div id="post-form-container">
+        
+        <form onSubmit={handleSubmit}>
 
-        <input type="text"
-          name="title"
-          onChange={handleChange}
-          value={title}
-          placeholder="title"
-        />
+          <input type="text"
+            name="title"
+            onChange={handleChange}
+            value={title}
+            placeholder="title"
+          />
 
-        <textarea 
-          name="text"
-          onChange={handleChange}
-          value={text}
-          placeholder="text"
-        />
+          <textarea 
+            name="text"
+            onChange={handleChange}
+            value={text}
+            placeholder="text"
+          />
 
-        <input type="submit" value="Post" />
+          <input type="submit" value="Post" />
 
-      </form>
+        </form>
+      </div>
     </>
   )
 }

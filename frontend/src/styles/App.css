@@ -416,7 +416,7 @@ main {
   background-color: var(--button-red-hover);
 }
 
-.delete-x {
+.delete-text {
   position: relative;
   top: -7px;
 }
@@ -424,4 +424,9 @@ main {
 .time {
   justify-self: end;
   margin-right: 12px;
+}
+
+#post-form-container {
+  border: 4px solid black;
+  margin-bottom: 1em;
 }
