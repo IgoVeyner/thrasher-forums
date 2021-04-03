@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { getBoards } from '../actions/boardActions'
+import { getBoards } from '../redux/actions/boardActions'
 import { useSelector, useDispatch } from 'react-redux'
 import Boards from '../components/boards'
 

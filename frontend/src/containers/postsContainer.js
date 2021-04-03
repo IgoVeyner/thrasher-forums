@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getPosts, addPost, removePost } from '../actions/postActions'
-import { postPost } from '../../services/api'
+import { getPosts, addPost, removePost } from '../redux/actions/postActions'
+import { postPost } from '../services/api'
 import Posts from '../components/posts';
 import Post from '../components/forms/post'
 

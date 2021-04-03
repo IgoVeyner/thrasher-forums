@@ -1,7 +1,7 @@
 import Comments from '../components/comments'
 import Comment from '../components/forms/comment'
-import { postComment } from '../../services/api'
-import { addComment, removeComment } from '../actions/commentActions'
+import { postComment } from '../services/api'
+import { addComment, removeComment } from '../redux/actions/commentActions'
 import { useDispatch, useSelector } from 'react-redux'
 
 export default function CommentContainer({ comments, postId }) {

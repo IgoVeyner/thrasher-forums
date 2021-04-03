@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router'
-import { fetchPost } from '../../services/api'
-import { setComments } from '../actions/commentActions'
+import { fetchPost } from '../services/api'
 import PostShow from '../components/postShow'
-import CommentsContainer from '../containers/commentsContainer'
-import { removePost } from '../actions/postActions'
 import NoMatch from '../components/noMatch'
+import CommentsContainer from '../containers/commentsContainer'
+import { setComments } from '../redux/actions/commentActions'
+import { removePost } from '../redux/actions/postActions'
 
 export default function PostShowContainer() {
 
