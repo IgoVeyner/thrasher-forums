@@ -313,3 +313,10 @@ main {
   justify-self: center;
   background-image: url("../images/metal.jpg");
 }
+
+#boards-sub-container {
+  margin: 8px;
+  border: black 8px solid;
+  padding: 12px;
+  background-color: white;
+}
