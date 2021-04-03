@@ -317,6 +317,7 @@ main {
   height: 30px;
   width: 75px;
   background-color: var(--button-red);
+  transition: background-color 0.2s ease-in-out;
 }
 
 .delete:hover {
@@ -437,7 +438,6 @@ main {
 #post-form-header-container {
   background-color: black;
   width:  175px;
-
   height: 34px;
   transform: skewX(-7deg);
   justify-self: center;
