@@ -2,7 +2,7 @@
 Skateboarding's number 1 magazine has decided to make a forum site. Skateboarders around the world will be able to sign up for an account, make posts and make comments. Topics include events, videos and photos. 
 
 ## Usage
-To use this app first clone into it then..
+To use this app first clone into it and start both the frontend and backend servers.
 
 ### Backend: 
 cd into the backend, run 'bundle install', 'rails db:create 'rails db:migrate', 'rails db:seed', and start the server with 'rails s'.
