@@ -5,14 +5,13 @@ import { fetchPost } from '../services/api'
 import PostShow from '../components/postShow'
 import NoMatch from '../components/noMatch'
 import CommentsContainer from '../containers/commentsContainer'
-import { setComments } from '../redux/actions/commentActions'
 import { removePost } from '../redux/actions/postActions'
 
 export default function PostShowContainer() {
 
   const { id } = useParams()
   const [post, setPost] = useState('')
-  const comments = useSelector(state => state.comments)
+  const [comments, setComments] = useState([])
   const currentUser = useSelector(state => state.user)
   const dispatch = useDispatch()
 
@@ -27,7 +26,7 @@ export default function PostShowContainer() {
       if (data.post) {
         setPost(data.post)
         if (data.comments) {
-          dispatch(setComments(data.comments))
+          setComments(data.comments)
         }
         dispatch({ type: "SET_POST" })
       }
