@@ -331,14 +331,14 @@ main {
 
 /* Board index styling */
 
-#boards-container, #posts-container {
+#boards-container, #posts-container, #post-show-container {
   width: 100%;
   max-width: 1120px;
   justify-self: center;
   background-image: url("../images/metal.jpg");
 }
 
-#boards-sub-container, #posts-sub-container {
+#boards-sub-container, #posts-sub-container, #post-show-sub-container {
   margin: 8px;
   border: black 8px solid;
   padding: 12px;
