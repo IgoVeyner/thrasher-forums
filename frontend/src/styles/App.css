@@ -530,3 +530,22 @@ main {
   display: grid;
   border-bottom: black solid 1px;
 }
+
+.comment-container {
+ border-top: grey 4px dotted; 
+}
+
+.comment-user {
+  color: #666666;
+  display: inline;
+}
+
+.comment-text {
+  color: black;
+  display: inline;
+}
+
+.comment-created {
+  color: #666666;
+  font-size: 12px;
+}

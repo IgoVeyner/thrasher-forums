@@ -7,7 +7,7 @@ export default function Comment({ comment, deleteComment, currentUser }) {
   const renderCreatedAt = () => {
     const split = createdAt.split('T')
     const time = split[1].split('.')[0]
-    return <p>Created on: {split[0]} at: {time}</p>
+    return <p className="comment-created">c: {split[0]} | at: {time}</p>
   }
 
   const renderDeleteButton = () => {
@@ -17,9 +17,9 @@ export default function Comment({ comment, deleteComment, currentUser }) {
   }
   
   return (
-    <div>
-      <p>User: {username}</p>
-      <p>{text}</p>
+    <div className="comment-container">
+      <p className="comment-user">{username}: </p>
+      <p className="comment-text">{text}</p>
       {renderCreatedAt()}
       {currentUser === username ? renderDeleteButton() : null}
     </div>
