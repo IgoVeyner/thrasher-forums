@@ -12,7 +12,11 @@ export default function Comment({ comment, deleteComment, currentUser }) {
 
   const renderDeleteButton = () => {
     return (
-      <button onClick={() => deleteComment(comment.id)} >Delete</button>
+      <button onClick={() => deleteComment(comment.id)} className="comment-delete button">
+        <span className="delete-text">
+          Delete 
+        </span>
+      </button>
     )
   }
   
@@ -20,8 +24,11 @@ export default function Comment({ comment, deleteComment, currentUser }) {
     <div className="comment-container">
       <p className="comment-user">{username}: </p>
       <p className="comment-text">{text}</p>
-      {renderCreatedAt()}
-      {currentUser === username ? renderDeleteButton() : null}
+
+      <div className="comment-footer">
+        {renderCreatedAt()}
+        {currentUser === username ? renderDeleteButton() : null}
+      </div>
     </div>
   )
 }

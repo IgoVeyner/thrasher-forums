@@ -328,7 +328,16 @@ main {
   margin-right: 0.5em;
 }
 
-.delete:hover, .show-delete:hover {
+.comment-delete {
+  width: 75px;
+  height: 30px;
+  justify-self: end;
+  background-color: var(--button-red);
+  transition: background-color 0.2s ease-in-out;
+  margin-right: 0.5em;
+}
+
+.delete:hover, .show-delete:hover, .comment-delete:hover {
   background-color: var(--button-red-hover);
 }
 
@@ -486,8 +495,7 @@ main {
 
 .post-show-title {
   color: black;
-  margin-top: 0.5em;
-  margin-bottom: 0px;
+  margin: 0px;
 }
 
 .post-text {
@@ -537,15 +545,22 @@ main {
 
 .comment-user {
   color: #666666;
-  display: inline;
+  display: inline-block;
+  margin-bottom: 0px;
 }
 
 .comment-text {
   color: black;
-  display: inline;
+  display: inline-block;
+  margin-bottom: 0px;
 }
 
 .comment-created {
   color: #666666;
   font-size: 12px;
+}
+
+.comment-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
