@@ -566,3 +566,23 @@ main {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
+/* Comment Form styles */
+
+#comment-form-header-container {
+  background-color: black;
+  width: 260px;
+  height: 34px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin: 1em 0px;
+}
+
+#comment-form-header {
+  position: relative;
+  top: -6px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
+}

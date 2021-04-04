@@ -25,8 +25,12 @@ export default function Comment({ user, submitComment, postId }) {
   }
 
   return (
-    <>
-      <h2>New Comment</h2>
+    <div id="comment-form-container">
+
+      <div id="comment-form-header-container">
+        <h1 id="comment-form-header">New Comment</h1>
+      </div>
+
       <form onSubmit={handleSubmit}>
 
         <input 
@@ -39,6 +43,7 @@ export default function Comment({ user, submitComment, postId }) {
         <input type="submit" value="Post Comment" />
 
       </form>
-    </>
+
+    </div>
   )
 }
