@@ -47,10 +47,9 @@ export default function PostShowContainer() {
       <div id="post-show-sub-container">
 
         {post === '' ? null : <PostShow post={post} deletePost={deletePost} currentUser={currentUser} /> }
-    
+        {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} setComments={setComments} /> }
+        
       </div>
-
-      {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} setComments={setComments} /> }
     </div>
   )
 }
