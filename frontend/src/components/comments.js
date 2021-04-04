@@ -9,14 +9,22 @@ export default function Comments({ comments, deleteComment, currentUser }) {
     })
   }
   
-  return (
-    <div id="comments-container">
-
-      <div id="comments-header-container">
-        <h1 id="comments-header">Comments</h1>
+  const renderContainers = () => {
+    return (
+      <div id="comments-container">
+  
+        <div id="comments-header-container">
+          <h1 id="comments-header">Comments</h1>
+        </div>
+  
+        {renderComments()}
       </div>
+    )
+  }
 
-      {renderComments()}
-    </div>
+  return (
+    <>
+      {comments.length === 0 ? null : renderContainers()}
+    </>
   )
 }
