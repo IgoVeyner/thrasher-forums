@@ -309,7 +309,6 @@ main {
 }
 
 .delete {
-  width: 100px;
   position: relative;
   justify-self: end;
   top: 10px;
@@ -320,7 +319,15 @@ main {
   transition: background-color 0.2s ease-in-out;
 }
 
-.delete:hover {
+.show-delete {
+  width: 75px;
+  height: 30px;
+  justify-self: end;
+  background-color: var(--button-red);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.delete:hover, .show-delete:hover {
   background-color: var(--button-red-hover);
 }
 
@@ -484,10 +491,16 @@ main {
 
 .post-text {
   color: #666666;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .post-show-description {
   color: black;
   margin-left: 10px;
+}
+
+#post-show-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 }

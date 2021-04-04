@@ -13,7 +13,11 @@ export default function PostShow({ post, deletePost, currentUser }) {
 
   const renderDeleteButton = () => {
     return (
-      <button onClick={() => deletePost(post.id)}>Delete</button>
+      <button onClick={() => deletePost(post.id)} className="button show-delete">
+        <span className="delete-text">
+          delete 
+        </span>
+      </button>
     )
   }
 
@@ -22,8 +26,11 @@ export default function PostShow({ post, deletePost, currentUser }) {
       <h1 className="post-show-title thrasher">{title}</h1>
       <p className="post-text">u: {username}</p>
       <p className="post-show-description">{text}</p>
-      {currentUser === username ? renderDeleteButton() : null}
-      {renderCreatedAt()}
+      
+      <div id="post-show-footer">
+        {renderCreatedAt()}
+        {currentUser === username ? renderDeleteButton() : null}
+      </div>
     </div>
   )
 }
