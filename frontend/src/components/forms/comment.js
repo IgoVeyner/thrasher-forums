@@ -26,21 +26,30 @@ export default function Comment({ user, submitComment, postId }) {
 
   return (
     <div id="comment-form-container">
+      <form onSubmit={handleSubmit} id="comment-form">
 
-      <div id="comment-form-header-container">
-        <h1 id="comment-form-header">New Comment</h1>
-      </div>
+        <div id="comment-form-header-container">
+          <h1 id="comment-form-header">New Comment</h1>
+        </div>
 
-      <form onSubmit={handleSubmit}>
+        <div className="comment-input-container">
+          <label className="comment-label">comment text</label>
 
-        <input 
-          name="text"
-          onChange={handleChange}
-          value={text}
-          placeholder="comment text"
-        />
+          <textarea 
+            className="comment-input"
+            name="text"
+            onChange={handleChange}
+            value={text}
+          />
+        </div>
         
-        <input type="submit" value="Post Comment" />
+        <div className="comment-button-container">
+          <input 
+            className="button signup-button"
+            type="submit" 
+            value="Post Comment" 
+          />
+        </div>
 
       </form>
 

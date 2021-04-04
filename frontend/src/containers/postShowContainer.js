@@ -43,13 +43,15 @@ export default function PostShowContainer() {
   }, [])
 
   return (
-    <div id="post-show-container">
-      <div id="post-show-sub-container">
+    <main>
+      <div id="post-show-container">
+        <div id="post-show-sub-container">
 
-        {post === '' ? null : <PostShow post={post} deletePost={deletePost} currentUser={currentUser} /> }
-        {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} setComments={setComments} /> }
-        
+          {post === '' ? null : <PostShow post={post} deletePost={deletePost} currentUser={currentUser} /> }
+          {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} setComments={setComments} /> }
+          
+        </div>
       </div>
-    </div>
+    </main>
   )
 }

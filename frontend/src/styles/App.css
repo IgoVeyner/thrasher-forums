@@ -224,7 +224,7 @@ main {
   margin: 0px;
 }
 
-.login-input-container, .signup-input-container, .post-input-container {
+.login-input-container, .signup-input-container, .post-input-container, .comment-input-container {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -232,14 +232,14 @@ main {
   justify-self: center;
 }
 
-.login-label, .signup-label, .post-label {
+.login-label, .signup-label, .post-label, .comment-label {
   color: #666666;
   margin-top: 10px;
   margin-bottom: 6px;
   font-size: 0.85em;
 }
 
-.login-input, .signup-input, .post-input {
+.login-input, .signup-input, .post-input, .comment-input {
   font-weight: bold;
   font-size: 14px;
   padding: 3px 3px 3px 10px;
@@ -251,7 +251,7 @@ main {
 
 /* Button Styling */
 
-.login-button-container, .signup-button-container, .post-button-container {
+.login-button-container, .signup-button-container, .post-button-container, .comment-button-container {
   justify-self: center;
   margin-top: 36px;
   margin-bottom: 12px;
@@ -482,7 +482,7 @@ main {
   align-self: center;
 }
 
-.post-textarea-input {
+.post-textarea-input, .comment-input {
   width: 350px;
   height: 200px;
   align-self: center;
@@ -585,4 +585,8 @@ main {
   font-family: 'Open Sans', sans-serif;
   transform: skewX(7deg);
   margin: 0px;
+}
+
+#comment-form {
+  display: grid;
 }
