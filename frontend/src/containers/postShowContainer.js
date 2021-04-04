@@ -50,7 +50,7 @@ export default function PostShowContainer() {
     
       </div>
 
-      {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} /> }
+      {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} setComments={setComments} /> }
     </div>
   )
 }

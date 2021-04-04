@@ -1,10 +1,9 @@
 import Comments from '../components/comments'
 import Comment from '../components/forms/comment'
-import { postComment } from '../services/api'
-import { addComment, removeComment } from '../redux/actions/commentActions'
+import { postComment, destroyComment } from '../services/api'
 import { useDispatch, useSelector } from 'react-redux'
 
-export default function CommentContainer({ comments, postId }) {
+export default function CommentContainer({ comments, postId, setComments }) {
 
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
@@ -18,13 +17,18 @@ export default function CommentContainer({ comments, postId }) {
       }
 
       if (data.comment) {
-        dispatch(addComment(data.comment))
+        console.log(data.comment)
+        // debugger
+        setComments([...comments, data.comment])
       }
     })
   }
 
   const deleteComment = id => {
-    dispatch(removeComment(id))
+    destroyComment(id)
+    .then(() => {
+      setComments(comments.filter(comment => comment.id !== id))
+    })
   }
 
   return (
