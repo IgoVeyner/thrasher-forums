@@ -8,7 +8,7 @@ export default function PostShow({ post, deletePost, currentUser }) {
   const renderCreatedAt = () => {
     const split = createdAt.split('T')
     const time = split[1].split('.')[0]
-    return <p>Created on: {split[0]} at: {time}</p>
+    return <p className="post-text">c: {split[0]} | at: {time}</p>
   }
 
   const renderDeleteButton = () => {
@@ -19,11 +19,11 @@ export default function PostShow({ post, deletePost, currentUser }) {
 
   return (
     <div>
-      <h1>{title}</h1>
-      <p>{text}</p>
-      <p>By: {username}</p>
-      {renderCreatedAt()}
+      <h1 className="post-show-title thrasher">{title}</h1>
+      <p className="post-text">u: {username}</p>
+      <p className="post-show-description">{text}</p>
       {currentUser === username ? renderDeleteButton() : null}
+      {renderCreatedAt()}
     </div>
   )
 }

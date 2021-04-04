@@ -473,3 +473,21 @@ main {
   font-size: 14px;
   padding: 3px 3px 3px 10px;
 }
+
+/* Post Show styles */
+
+.post-show-title {
+  color: black;
+  margin-top: 0.5em;
+  margin-bottom: 0px;
+}
+
+.post-text {
+  color: #666666;
+  font-size: 14px;
+}
+
+.post-show-description {
+  color: black;
+  margin-left: 10px;
+}
