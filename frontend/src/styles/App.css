@@ -528,4 +528,5 @@ main {
 
 #comments-container {
   display: grid;
+  border-bottom: black solid 1px;
 }
