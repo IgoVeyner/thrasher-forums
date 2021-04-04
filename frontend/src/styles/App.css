@@ -547,12 +547,14 @@ main {
   color: #666666;
   display: inline-block;
   margin-bottom: 0px;
+  margin-top: 12px;
 }
 
 .comment-text {
   color: black;
   display: inline-block;
   margin-bottom: 0px;
+  margin-top: 12px;
 }
 
 .comment-created {
