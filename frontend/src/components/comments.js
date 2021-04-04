@@ -10,7 +10,12 @@ export default function Comments({ comments, deleteComment, currentUser }) {
   }
   
   return (
-    <div>
+    <div id="comments-container">
+
+      <div id="comments-header-container">
+        <h1 id="comments-header">Comments</h1>
+      </div>
+
       {renderComments()}
     </div>
   )

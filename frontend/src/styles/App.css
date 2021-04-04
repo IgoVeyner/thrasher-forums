@@ -506,3 +506,26 @@ main {
   padding-bottom: 1em;
   border-bottom: black 1px solid;
 }
+
+/* Comments styles */
+#comments-header-container {
+  background-color: black;
+  width: 200px;
+  height: 34px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin: 1em 0px;
+}
+
+#comments-header {
+  position: relative;
+  top: -6px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
+}
+
+#comments-container {
+  display: grid;
+}
