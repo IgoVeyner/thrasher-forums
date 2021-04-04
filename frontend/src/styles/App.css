@@ -325,6 +325,7 @@ main {
   justify-self: end;
   background-color: var(--button-red);
   transition: background-color 0.2s ease-in-out;
+  margin-right: 0.5em;
 }
 
 .delete:hover, .show-delete:hover {
@@ -496,11 +497,11 @@ main {
 
 .post-show-description {
   color: black;
-  margin-left: 10px;
 }
 
 #post-show-footer {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  margin-bottom: 0.5em;
 }
