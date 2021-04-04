@@ -548,6 +548,9 @@ main {
   display: inline-block;
   margin-bottom: 0px;
   margin-top: 12px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: bold;
 }
 
 .comment-text {
