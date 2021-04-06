@@ -33,7 +33,9 @@ export default function Post({ post, currentUser, deletePost }) {
       <div className="post-text">
         <h2 className="post-title">{title}</h2>
         {currentUser === user ? renderDeleteButton() : <p></p>}
-        <p className="post-description">u: {user}</p>
+        <p className="post-description">u: 
+          <span className="bold"> {user}</span>
+        </p>
         {renderCreatedAt()}
       </div>
     </Link>

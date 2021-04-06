@@ -53,7 +53,6 @@ export default function Comment({ user, submitComment, postId }) {
         </div>
 
       </form>
-
     </div>
   )
 }

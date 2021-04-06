@@ -601,3 +601,8 @@ main {
 #error-404 h1, #error-404 h2 {
   color: red;
 }
+
+.bold {
+  font-weight: bold;
+  color: #666666;
+}
