@@ -42,7 +42,8 @@ function App() {
   }
 
   const handleLogin = credentials => {
-    fetchLogin(credentials).then(data => {
+    fetchLogin(credentials)
+    .then(data => {
       if (data.error) {
         alert(data.error) 
       }
