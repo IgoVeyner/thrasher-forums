@@ -31,7 +31,6 @@ function App() {
     postUser(newUser)
     .then(data => {
       if (data.error) {
-        // display user errors on screen differently
         alert(data.messages)
       }
       
@@ -45,7 +44,6 @@ function App() {
   const handleLogin = credentials => {
     fetchLogin(credentials).then(data => {
       if (data.error) {
-        // display message on screen differently
         alert(data.error) 
       }
 
