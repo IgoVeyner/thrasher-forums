@@ -12,7 +12,9 @@ export default function Post({ submitPost, user, board }) {
       text,
       username: user,
       board_name: board
-     }})
+    }})
+    setTitle("")
+    setText("")
   }
 
   const handleChange = e => {

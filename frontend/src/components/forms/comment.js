@@ -11,6 +11,7 @@ export default function Comment({ user, submitComment, postId }) {
       post_id: postId,
       username: user
     }})
+    setText("")
   }
 
   const handleChange = e => {
