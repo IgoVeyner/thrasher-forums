@@ -593,3 +593,11 @@ main {
 #comment-form {
   display: grid;
 }
+
+#error-404{
+  text-align: center;
+}
+
+#error-404 h1, #error-404 h2 {
+  color: red;
+}
