@@ -17,8 +17,6 @@ export default function CommentContainer({ comments, postId, setComments }) {
       }
 
       if (data.comment) {
-        console.log(data.comment)
-        // debugger
         setComments([...comments, data.comment])
       }
     })

@@ -42,7 +42,7 @@ export default function PostContainer() {
           </div>
 
           <Posts posts={posts} user={user} deletePost={deletePost} /> 
-          <Post submitPost={submitPost} user={user} board={route} /> 
+          <Post submitPost={submitPost} user={user} board={route.name} /> 
 
         </div>
       </div>
