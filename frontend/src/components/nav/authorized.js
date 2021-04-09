@@ -10,19 +10,19 @@ export default function Authorized({ handleLogout }) {
         </span>
       </Link>
 
-      <Link to="/events" className="nav-link" >
+      <Link to="/boards/events" className="nav-link" >
         <span className="thrasher" >
           EVENTS
         </span>
       </Link>
 
-      <Link to="/videos" className="nav-link" >
+      <Link to="/boards/videos" className="nav-link" >
         <span className="thrasher" >
           VIDEOS
         </span>
       </Link>
 
-      <Link to="/photos" className="nav-link" >
+      <Link to="/boards/photos" className="nav-link" >
         <span className="thrasher" >
           PHOTOS
         </span>
