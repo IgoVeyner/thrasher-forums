@@ -1,7 +1,7 @@
 function handlePosts(state = [], action) {
   switch (action.type) {
     case "SET_POSTS":
-      return action.payload
+      return action.payload || state
 
     case "ADD_POST":
       return [...state, action.payload]

@@ -7,7 +7,7 @@ export const getPosts = boardName => {
       if (response.posts) {
         dispatch({ type: "SET_POSTS", payload: response.posts })
       } else {
-        dispatch({ type: "SET_POSTS", payload: []})
+        dispatch({ type: "SET_POSTS" })
       }
     })
   }
