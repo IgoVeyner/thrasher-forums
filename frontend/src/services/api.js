@@ -1,8 +1,15 @@
 import { getToken } from './localstorage'
 
 const URL = 'http://localhost:3000/api/v1/'
+
 const headers = { 'Content-Type': 'application/json', 'Accepts': 'application/json' }
-const authHeaders = () => ({ Authorization: `Bearer ${getToken()}` })
+const authHeaders = { Authorization: `Bearer ${getToken()}` }
+const fullHeaders = {
+  'Content-Type': 'application/json', 
+  'Accepts': 'application/json',
+  'Authorization': `Bearer ${getToken()}`
+}
+
 const parseJSON = res => res.json()
 
 export const postUser = user => {
@@ -26,11 +33,7 @@ export const fetchLogin = credentials => {
 export const postPost = post => {
   return fetch(URL + "posts", {
     method: 'POST',
-    headers: {
-      'Content-Type': 'application/json', 
-      'Accepts': 'application/json',
-      "Authorization": `Bearer ${getToken()}`
-    },
+    headers: fullHeaders,
     body: JSON.stringify(post)
   })
   .then(parseJSON)
@@ -39,11 +42,7 @@ export const postPost = post => {
 export const postComment = comment => {
   return fetch(URL + "comments", {
     method: `POST`,
-    headers: {
-      'Content-Type': 'application/json', 
-      'Accepts': 'application/json',
-      "Authorization": `Bearer ${getToken()}`
-    },
+    headers: fullHeaders,
     body: JSON.stringify(comment)
   })
   .then(parseJSON)
@@ -52,11 +51,7 @@ export const postComment = comment => {
 export const destroyPost = id => {
   return fetch(URL + `posts/${id}`, {
     method: "DELETE",
-    headers: {
-      'Content-Type': 'application/json', 
-      'Accepts': 'application/json',
-      "Authorization": `Bearer ${getToken()}`
-    }
+    headers: fullHeaders
   })
   .then(parseJSON)
 }
@@ -64,18 +59,14 @@ export const destroyPost = id => {
 export const destroyComment = id => {
   return fetch(URL + `comments/${id}`, {
     method: "DELETE",
-    headers: {
-      'Content-Type': 'application/json', 
-      'Accepts': 'application/json',
-      "Authorization": `Bearer ${getToken()}`
-    }
+    headers: fullHeaders
   })
   .then(parseJSON)
 }
 
 const authFetch = path => {
   return fetch(URL + path, {
-    headers: authHeaders()
+    headers: authHeaders
   })
   .then(parseJSON)
 }
