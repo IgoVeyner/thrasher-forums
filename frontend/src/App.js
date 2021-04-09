@@ -21,8 +21,11 @@ function App() {
   const setUserFromToken = () => dispatch(getUser())
   const setUser = username => dispatch(setFetchedUser(username))
 
+  const noUser = () => user === "" ? true : false
+  const userExists = () => user !== "" ? true : false
+
   const checkAuthorization = () => {
-    if (getToken() && user === "") {
+    if (getToken() && noUser()) {
       setUserFromToken()  
     } 
   }
@@ -65,7 +68,7 @@ function App() {
   }, [])
 
   const redirectToLoginPreCheck = (route = "/") => {
-    if (user !== "") {
+    if (userExists()) {
       switch (route) {
         case "events":
         case "videos":
@@ -84,7 +87,7 @@ function App() {
   } 
 
   const redirectToHomePreCheck = route => {
-    if (user === "") {
+    if (noUser()) {
       switch (route) {
         case "signup":
           return <SignupForm handleSignup={handleSignup} />
@@ -100,7 +103,7 @@ function App() {
   }
 
   const checkForTokenAndUser = () => {
-    if (getToken() && user === "") {
+    if (getToken() && noUser()) {
       return null
     } else {
       return (
