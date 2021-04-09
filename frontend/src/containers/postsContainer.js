@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPosts, addPost, removePost } from '../redux/actions/postActions'
 import { postPost } from '../services/api'
@@ -10,6 +10,7 @@ import NoMatch from '../components/noMatch'
 export default function PostContainer() {
 
   const route = useParams()
+  const [fetched, setFetched] = useState(false)
   const posts = useSelector(state => state.posts)
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
@@ -25,11 +26,20 @@ export default function PostContainer() {
       if (data.post) {
         dispatch(addPost(data.post))
       }
+      setFetched(true)
     })
   }
 
   const deletePost = id => {
     dispatch(removePost(id))
+  }
+
+  const checkFetched = () => {
+    if (fetched && posts.length > 0) {
+      return <NoMatch />
+    } else {
+      return null
+    }
   }
 
   const renderComponents = () => {
@@ -56,7 +66,7 @@ export default function PostContainer() {
   return (
     <main>
 
-      {posts.length > 0 ? renderComponents() : <NoMatch />}
+      { posts.length > 0 ? renderComponents() : checkFetched() }
 
     </main>
   )
