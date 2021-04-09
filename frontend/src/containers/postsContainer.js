@@ -32,6 +32,14 @@ export default function PostContainer() {
     dispatch(removePost(id))
   }
 
+  const renderHeader = () => {
+    return (
+      <div id="posts-header-container">
+        <h1 id="posts-header">Posts</h1>
+      </div>
+    )
+  }
+
   useEffect(() => {
     dispatch(getPosts(route))
   }, [route])
@@ -41,9 +49,7 @@ export default function PostContainer() {
       <div id="posts-container">
         <div id="posts-sub-container">
           
-          <div id="posts-header-container">
-            <h1 id="posts-header">Posts</h1>
-          </div>
+          {renderHeader()}
 
           {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={deletePost} /> : null }
           {posts.length > 0 ? <Post submitPost={submitPost} user={user} board={route} /> : <NoMatch />}
