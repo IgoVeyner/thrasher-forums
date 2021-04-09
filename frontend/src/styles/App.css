@@ -611,8 +611,28 @@ main {
   margin: 8px;
   border: 8px solid black;
   background-color: white;
+  display: grid;
 }
 
-#error-404 h1, #error-404 h2 {
-  color: red;
+#error-404 h2 {
+  color:#666666;
+  margin-top: 0px;
+}
+
+#error-header-container {
+  background-color: black;
+  width: 170px;
+  height: 34px;
+  transform: skewX(-7deg);
+  justify-self: center;
+  margin: 1em 0px;
+}
+
+#error-header {
+  position: relative;
+  top: -5px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  transform: skewX(7deg);
+  margin: 0px;
 }
