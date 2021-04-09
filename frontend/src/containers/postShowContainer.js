@@ -19,9 +19,6 @@ export default function PostShowContainer() {
     dispatch({ type: "FETCHING" })
     fetchPost(id)
     .then(data => {
-      if (data.error) {
-        alert(data.error)
-      }
 
       if (data.post) {
         setPost(data.post)
@@ -38,20 +35,28 @@ export default function PostShowContainer() {
     setPost('')
   }
 
+  const renderComponents = () => {
+    return (
+      <div id="post-show-container">
+        <div id="post-show-sub-container">
+
+          <PostShow post={post} deletePost={deletePost} currentUser={currentUser} />
+          <CommentsContainer comments={comments} postId={post.id} setComments={setComments} />
+          
+        </div>
+      </div>
+    )
+  }
+
   useEffect(() => {
     getPost()
   }, [])
 
   return (
     <main>
-      <div id="post-show-container">
-        <div id="post-show-sub-container">
+      
+      {post === '' ? <NoMatch /> : renderComponents()}
 
-          {post === '' ? null : <PostShow post={post} deletePost={deletePost} currentUser={currentUser} /> }
-          {post === '' ? <NoMatch /> : <CommentsContainer comments={comments} postId={post.id} setComments={setComments} /> }
-          
-        </div>
-      </div>
     </main>
   )
 }
