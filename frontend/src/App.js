@@ -70,11 +70,6 @@ function App() {
   const redirectToLoginPreCheck = (route = "/") => {
     if (userExists()) {
       switch (route) {
-        case "events":
-        case "videos":
-        case "photos":
-          return <PostContainer route={route} />
-
         case "boards/:name":
           return <PostContainer />
 
@@ -125,18 +120,6 @@ function App() {
 
             <Route path="/boards/:name" exact >
               {redirectToLoginPreCheck("boards/:name")}
-            </Route>
-
-            <Route path="/events" exact >
-              {redirectToLoginPreCheck("events")}
-            </Route>
-
-            <Route path="/videos" exact >
-              {redirectToLoginPreCheck("videos")}
-            </Route>
-
-            <Route path="/photos" exact >
-              {redirectToLoginPreCheck("photos")}
             </Route>
 
             <Route path="/posts/:id" exact>
