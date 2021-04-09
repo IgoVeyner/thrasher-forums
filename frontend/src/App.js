@@ -1,5 +1,4 @@
 import './styles/App.css'
-import Home from './components/home'
 import SignupForm from './components/forms/signup'
 import LoginForm from './components/forms/login'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
@@ -11,6 +10,7 @@ import NavBar from './components/nav/navbar'
 import { useEffect } from 'react'
 import PostContainer from './containers/postsContainer'
 import PostShowContainer from './containers/postShowContainer'
+import BoardsContainer from './containers/boardsContainer'
 import NoMatch from './components/noMatch'
 
 function App() {
@@ -79,7 +79,7 @@ function App() {
           return <PostShowContainer />
         
         default:
-          return <Home />
+          return <BoardsContainer />
       }
     } else {
       return <Redirect to="/login" />
