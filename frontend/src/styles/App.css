@@ -594,15 +594,25 @@ main {
   display: grid;
 }
 
+.bold {
+  font-weight: bold;
+  color: #666666;
+}
+
+/* error page styling */
+#error-container {
+  width: 600px;
+  justify-self: center;
+  background-image: url("../images/metal.jpg");
+}
+
 #error-404{
   text-align: center;
+  margin: 8px;
+  border: 8px solid black;
+  background-color: white;
 }
 
 #error-404 h1, #error-404 h2 {
   color: red;
-}
-
-.bold {
-  font-weight: bold;
-  color: #666666;
 }
