@@ -4,9 +4,12 @@ import { getPosts, addPost, removePost } from '../redux/actions/postActions'
 import { postPost } from '../services/api'
 import Posts from '../components/posts';
 import Post from '../components/forms/post'
+import { useParams } from 'react-router'
+import NoMatch from '../components/noMatch'
 
-export default function PostContainer({ route }) {
+export default function PostContainer() {
 
+  const route = useParams()
   const posts = useSelector(state => state.posts)
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
@@ -43,7 +46,7 @@ export default function PostContainer({ route }) {
           </div>
 
           {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={deletePost} /> : null }
-          <Post submitPost={submitPost} user={user} board={route} />
+          {posts.length > 0 ? <Post submitPost={submitPost} user={user} board={route} /> : <NoMatch />}
 
         </div>
       </div>

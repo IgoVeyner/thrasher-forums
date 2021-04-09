@@ -3,8 +3,12 @@ import { fetchPosts, destroyPost } from '../../services/api'
 export const getPosts = boardName => {
   return dispatch => {
     dispatch({ type: "FETCHING" })
-    fetchPosts(boardName).then(response => {
-      dispatch({ type: "SET_POSTS", payload: response.posts })
+    fetchPosts(boardName.name).then(response => {
+      if (response.posts) {
+        dispatch({ type: "SET_POSTS", payload: response.posts })
+      } else {
+        dispatch({ type: "SET_POSTS", payload: []})
+      }
     })
   }
 }

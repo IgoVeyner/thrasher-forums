@@ -75,6 +75,9 @@ function App() {
         case "photos":
           return <PostContainer route={route} />
 
+        case "boards/:name":
+          return <PostContainer />
+
         case "posts/:id":
           return <PostShowContainer />
         
@@ -118,6 +121,10 @@ function App() {
 
             <Route path="/login" exact >
               {redirectToHomePreCheck("login")}
+            </Route>
+
+            <Route path="/boards/:name" exact >
+              {redirectToLoginPreCheck("boards/:name")}
             </Route>
 
             <Route path="/events" exact >
