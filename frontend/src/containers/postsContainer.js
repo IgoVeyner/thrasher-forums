@@ -32,10 +32,19 @@ export default function PostContainer() {
     dispatch(removePost(id))
   }
 
-  const renderHeader = () => {
+  const renderComponents = () => {
     return (
-      <div id="posts-header-container">
-        <h1 id="posts-header">Posts</h1>
+      <div id="posts-container">
+        <div id="posts-sub-container">
+          
+          <div id="posts-header-container">
+            <h1 id="posts-header">Posts</h1>
+          </div>
+
+          <Posts posts={posts} user={user} deletePost={deletePost} /> 
+          <Post submitPost={submitPost} user={user} board={route} /> 
+
+        </div>
       </div>
     )
   }
@@ -46,16 +55,9 @@ export default function PostContainer() {
 
   return (
     <main>
-      <div id="posts-container">
-        <div id="posts-sub-container">
-          
-          {renderHeader()}
 
-          {posts.length > 0 ? <Posts posts={posts} user={user} deletePost={deletePost} /> : null }
-          {posts.length > 0 ? <Post submitPost={submitPost} user={user} board={route} /> : <NoMatch />}
+      {posts.length > 0 ? renderComponents() : <NoMatch />}
 
-        </div>
-      </div>
     </main>
   )
 
