@@ -10,6 +10,7 @@ import { removePost } from '../redux/actions/postActions'
 export default function PostShowContainer() {
 
   const { id } = useParams()
+  const [fetched, setFetched] = useState(false)
   const [post, setPost] = useState('')
   const [comments, setComments] = useState([])
   const currentUser = useSelector(state => state.user)
@@ -20,6 +21,7 @@ export default function PostShowContainer() {
     fetchPost(id)
     .then(data => {
 
+      setFetched(true)
       if (data.post) {
         setPost(data.post)
         if (data.comments) {
@@ -48,6 +50,14 @@ export default function PostShowContainer() {
     )
   }
 
+  const checkFetched = () => {
+    if (fetched && post === '') {
+      return <NoMatch />
+    } else {
+      return null
+    }
+  }
+
   useEffect(() => {
     getPost()
   }, [])
@@ -55,7 +65,7 @@ export default function PostShowContainer() {
   return (
     <main>
       
-      {post === '' ? <NoMatch /> : renderComponents()}
+      {post === '' ? checkFetched() : renderComponents()}
 
     </main>
   )
