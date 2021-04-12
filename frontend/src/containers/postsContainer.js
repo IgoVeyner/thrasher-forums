@@ -6,7 +6,8 @@ import Posts from '../components/posts';
 import Post from '../components/forms/post'
 import { useParams } from 'react-router'
 import NoMatch from '../components/noMatch'
-
+import { sendPost } from '../redux/actions/postActions'
+ 
 export default function PostContainer() {
 
   const route = useParams()
@@ -15,27 +16,11 @@ export default function PostContainer() {
   const user = useSelector(state => state.user)
   const dispatch = useDispatch()
 
-  const submitPost = post => {
-    dispatch({ type: "FETCHING" })
-    postPost(post)
-    .then(data => {
-      if (data.error) {
-        alert(data.messages)
-      }
-
-      if (data.post) {
-        dispatch(addPost(data.post))
-      }
-      setFetched(true)
-    })
-  }
-
-  const deletePost = id => {
-    dispatch(removePost(id))
-  }
+  const submitPost = post => dispatch(sendPost(post))
+  const deletePost = id => dispatch(removePost(id)) 
 
   const checkFetched = () => {
-    if (fetched && posts.length > 0) {
+    if (fetched && posts.length === 0) {
       return <NoMatch />
     } else {
       return null
@@ -60,7 +45,7 @@ export default function PostContainer() {
   }
 
   useEffect(() => {
-    dispatch(getPosts(route))
+    dispatch(getPosts(route, setFetched))
   }, [route])
 
   return (

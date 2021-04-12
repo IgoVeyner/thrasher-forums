@@ -1,6 +1,6 @@
-import { fetchPosts, destroyPost } from '../../services/api'
+import { fetchPosts, destroyPost, postPost } from '../../services/api'
 
-export const getPosts = boardName => {
+export const getPosts = (boardName, setFetched) => {
   return dispatch => {
     dispatch({ type: "FETCHING" })
     fetchPosts(boardName.name).then(response => {
@@ -9,6 +9,24 @@ export const getPosts = boardName => {
       } else {
         dispatch({ type: "SET_POSTS" })
       }
+      setFetched(true)
+    })
+  }
+}
+
+export const sendPost = post => {
+  return dispatch => {
+    dispatch({ type: "FETCHING" })
+    postPost(post)
+    .then(data => {
+      if (data.error) {
+        alert(data.messages)
+      }
+
+      if (data.post) {
+        dispatch({ type: "ADD_POST", payload: data.post })
+      }
+
     })
   }
 }
