@@ -1,6 +1,6 @@
-import { postComment, destroyComment } from '../services/api'
+import { postComment, destroyComment } from '../../services/api'
 
-export const submitComment = setComments => {
+export const submitComment = (comments, comment, setComments) => {
   return dispatch => {
     dispatch({ type: "FETCHING" })
       postComment(comment)
@@ -17,7 +17,7 @@ export const submitComment = setComments => {
   }
 }
 
-export const removeComment = (id, setComments) => {
+export const removeComment = (id, comments, setComments) => {
   return dispatch => {
     destroyComment(id)
     .then(() => {

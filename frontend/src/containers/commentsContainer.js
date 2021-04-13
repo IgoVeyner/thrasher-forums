@@ -2,6 +2,7 @@ import Comments from '../components/comments'
 import Comment from '../components/forms/comment'
 import { postComment, destroyComment } from '../services/api'
 import { useDispatch, useSelector } from 'react-redux'
+import { submitComment } from '../redux/actions/commentActions'
 
 export default function CommentContainer({ comments, postId, setComments }) {
 
