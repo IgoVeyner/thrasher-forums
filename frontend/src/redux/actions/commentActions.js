@@ -22,6 +22,7 @@ export const removeComment = (id, comments, setComments) => {
     destroyComment(id)
     .then(() => {
       setComments(comments.filter(comment => comment.id !== id))
+      dispatch({ type: "REMOVE_COMMENT" })
     })
   }
 }
