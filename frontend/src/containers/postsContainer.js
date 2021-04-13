@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getPosts, addPost, removePost } from '../redux/actions/postActions'
-import { postPost } from '../services/api'
+import { getPosts, sendPost, removePost } from '../redux/actions/postActions'
 import Posts from '../components/posts';
 import Post from '../components/forms/post'
 import { useParams } from 'react-router'
 import NoMatch from '../components/noMatch'
-import { sendPost } from '../redux/actions/postActions'
  
 export default function PostContainer() {
 
