@@ -2,26 +2,13 @@ import Comments from '../components/comments'
 import Comment from '../components/forms/comment'
 import { postComment, destroyComment } from '../services/api'
 import { useDispatch, useSelector } from 'react-redux'
-import { submitComment } from '../redux/actions/commentActions'
+import { submitCommentAction } from '../redux/actions/commentActions'
 
 export default function CommentContainer({ comments, postId, setComments }) {
 
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
-
-  const submitComment = comment => {
-    dispatch({ type: "FETCHING" })
-    postComment(comment)
-    .then(data => {
-      if (data.error) {
-        alert(data.messages)
-      }
-
-      if (data.comment) {
-        setComments([...comments, data.comment])
-      }
-    })
-  }
+  const submitComment = comment => dispatch(submitCommentAction(comments, comment, setComments))
 
   const deleteComment = id => {
     destroyComment(id)

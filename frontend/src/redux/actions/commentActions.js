@@ -1,6 +1,6 @@
 import { postComment, destroyComment } from '../../services/api'
 
-export const submitComment = (comments, comment, setComments) => {
+export const submitCommentAction = (comments, comment, setComments) => {
   return dispatch => {
     dispatch({ type: "FETCHING" })
       postComment(comment)
