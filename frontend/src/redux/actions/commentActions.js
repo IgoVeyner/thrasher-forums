@@ -16,3 +16,12 @@ export const submitComment = setComments => {
       })
   }
 }
+
+export const removeComment = (id, setComments) => {
+  return dispatch => {
+    destroyComment(id)
+    .then(() => {
+      setComments(comments.filter(comment => comment.id !== id))
+    })
+  }
+}
