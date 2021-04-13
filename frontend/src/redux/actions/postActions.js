@@ -1,4 +1,4 @@
-import { fetchPosts, destroyPost, postPost } from '../../services/api'
+import { fetchPosts, fetchPost, destroyPost, postPost } from '../../services/api'
 
 export const getPosts = (boardName, setFetched) => {
   return dispatch => {
@@ -9,6 +9,25 @@ export const getPosts = (boardName, setFetched) => {
       } else {
         dispatch({ type: "SET_POSTS" })
       }
+      setFetched(true)
+    })
+  }
+}
+
+export const getPost = (id, setFetched, setPost, setComments) => {
+  return dispatch => {
+    dispatch({ type: "FETCHING" })
+    fetchPost(id)
+    .then(data => {
+
+      if (data.post) {
+        setPost(data.post)
+        if (data.comments) {
+          setComments(data.comments)
+        }
+        dispatch({ type: "SET_POST" })
+      }
+
       setFetched(true)
     })
   }
