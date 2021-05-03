@@ -316,7 +316,7 @@ main {
 .delete {
   position: relative;
   justify-self: end;
-  top: 10px;
+  bottom: 10px;
   right: 10px;
   height: 30px;
   width: 75px;
@@ -680,7 +680,8 @@ main {
 
   .delete {
     right: 0px;
-    top: 0px;
+    bottom: 0px;
     justify-self: center;
+    margin-bottom: 8px;
   }
 }

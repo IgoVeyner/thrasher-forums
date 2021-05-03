@@ -32,11 +32,11 @@ export default function Post({ post, currentUser, deletePost }) {
     <Link to={`/posts/${id}`} className="post-link" >
       <div className="post-text">
         <h2 className="post-title">{title}</h2>
-        {currentUser === user ? renderDeleteButton() : null}
+        {renderCreatedAt()}
         <p className="post-description">u: 
           <span className="bold"> {user}</span>
         </p>
-        {renderCreatedAt()}
+        {currentUser === user ? renderDeleteButton() : null}
       </div>
     </Link>
   )
