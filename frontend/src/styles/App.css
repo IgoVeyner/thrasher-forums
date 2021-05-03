@@ -663,17 +663,24 @@ main {
 
 @media only screen and (max-width: 750px) {
   .post-text {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: none;
+    grid-template-rows: auto;
   }
 
   .post-title {
     padding: 8px 0px;
+    justify-self: center;
     text-align: center;
   }  
 
   .post-description {
     padding: 4px 0px;
-    text-align: center;
+    justify-self: center;
+  }
+
+  .delete {
+    right: 0px;
+    top: 0px;
+    justify-self: center;
   }
 }
