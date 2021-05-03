@@ -676,6 +676,7 @@ main {
   }  
 
   .post-description {
+    margin: 0px;
     padding: 4px 0px;
     justify-self: center;
   }
@@ -684,6 +685,7 @@ main {
     right: 0px;
     bottom: 0px;
     justify-self: center;
+    margin-top: 4px;
     margin-bottom: 8px;
   }
 }
