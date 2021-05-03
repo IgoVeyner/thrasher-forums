@@ -442,7 +442,7 @@ main {
 
 .post-text {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 70% 30%;
 }
 
 .time {
@@ -658,5 +658,22 @@ main {
     width: 100%;
     grid-area: header;
     justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .post-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post-title {
+    padding: 8px 0px;
+    text-align: center;
+  }  
+
+  .post-description {
+    padding: 4px 0px;
+    text-align: center;
   }
 }
