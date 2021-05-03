@@ -651,6 +651,11 @@ main {
   }
 
   #mobile-nav {
-    display: block;
+    display: flex;
+    margin: 1em 0px;
+    height: 7em;
+    width: 100%;
+    grid-area: header;
+    justify-content: center;
   }
 }
