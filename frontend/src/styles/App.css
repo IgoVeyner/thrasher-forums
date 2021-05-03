@@ -448,6 +448,8 @@ main {
 .time {
   justify-self: end;
   margin-right: 12px;
+  margin-top: 12px;
+  padding: 0px;
 }
 
 /* Post Form styling */
