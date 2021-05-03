@@ -9,7 +9,7 @@ export default function NavBar({ handleLogout }) {
   const user = useSelector(state => state.user)
 
   return (
-    <header>
+    <header id="nav">
       <Logo />
       
       <div className="sub-header">

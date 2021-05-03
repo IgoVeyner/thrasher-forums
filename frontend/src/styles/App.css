@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 
 /* Nav Bar Styling */
 
-header {
+#nav {
   display: grid;
   grid-template-columns: 30% 70%;
   grid-template-rows: none;
@@ -38,6 +38,10 @@ header {
   max-width: 1120px;
   grid-area: header;
   justify-self: center;
+}
+
+#mobile-nav {
+  display: none;
 }
 
 .logo {
@@ -642,5 +646,11 @@ main {
     margin: 0px 0px;
   }
   
-  
+  #nav {
+    display: none;
+  }
+
+  #mobile-nav {
+    display: block;
+  }
 }

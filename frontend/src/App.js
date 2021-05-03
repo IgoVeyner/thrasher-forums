@@ -7,6 +7,7 @@ import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
 import { setToken, clearToken, getToken } from './services/localstorage'
 import NavBar from './components/nav/navbar'
+import MobileNavBar from './components/nav/mobile/navbar'
 import { useEffect } from 'react'
 import PostContainer from './containers/postsContainer'
 import PostShowContainer from './containers/postShowContainer'
@@ -107,6 +108,7 @@ function App() {
       return (
         <Router>
           <NavBar handleLogout={handleLogout} />
+          <MobileNavBar handleLogout={handleLogout} />
 
           <Switch>
             

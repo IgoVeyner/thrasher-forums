@@ -12,7 +12,7 @@ export default function MobileNavBar({ handleLogout }) {
   const user = useSelector(state => state.user)
 
   return (
-    <header>
+    <header id="mobile-nav">
       <Logo />
       
       {/* Render a dropdown button */}
