@@ -52,6 +52,11 @@ h1, h2, h3, h4, h5, h6, div, span, a {
   justify-self: left;
   color: transparent;
   cursor: pointer;
+  transition: filter .3s;
+}
+
+.logo:hover {
+  filter: blur(1.5px);
 }
 
 .nav {
