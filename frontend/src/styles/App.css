@@ -63,6 +63,11 @@ h1, h2, h3, h4, h5, h6, div, span, a {
   font-size: 1.5rem;
   margin: 0px 0.5em;
   text-decoration: none;
+  transition: filter .3s;
+}
+
+.nav-link:hover {
+  filter: blur(1.5px);
 }
 
 .thrasher {
@@ -101,10 +106,12 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 .dummy {
   color: transparent;
   margin: 0px 1.5%;
+  transition: filter .3s;
 }
 
 .dummy:hover {
   cursor: pointer;
+  filter: blur(1.5px);
 }
 
 .dummy-form-container {
@@ -329,6 +336,11 @@ main {
   position: relative;
   top: -6px;
   cursor: pointer;
+  transition: filter .3s;
+}
+
+#logout:hover {
+  filter: blur(1.5px);
 }
 
 #logout:active {
