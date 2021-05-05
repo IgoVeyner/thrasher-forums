@@ -692,4 +692,13 @@ main {
   .board-text {
     text-align: center;
   }
+
+  .post-input-container, .comment-input-container {
+    width: 100%;
+  }
+
+  .post-input, .post-textarea-input, .comment-input {
+    width: 70%;
+    max-width: 350px;
+  }
 }
