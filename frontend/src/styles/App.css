@@ -688,4 +688,8 @@ main {
     margin-top: 4px;
     margin-bottom: 8px;
   }
+
+  .board-text {
+    text-align: center;
+  }
 }
