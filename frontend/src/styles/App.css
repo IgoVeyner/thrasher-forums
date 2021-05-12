@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 }
 
 #mobile-dropdown {
-  height: 100px;
+  display: none;
   background: grey;
 }
 
@@ -703,6 +703,10 @@ main {
     width: 100%;
     grid-area: header;
     justify-content: center;
+  }
+
+  #mobile-dropdown {
+    display: block;
   }
 
   .post-show-title, .post-show-text {

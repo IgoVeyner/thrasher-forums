@@ -11,6 +11,12 @@ export default function MobileNavBar({ handleLogout }) {
 
   const updateMenuState = () => {
     setMenuState(!menuState)
+    updateDropDownHeight()
+  }
+
+  const updateDropDownHeight = () => {
+    const dropdown = document.querySelector("#mobile-dropdown")
+    dropdown.style.height = menuState ? "0px" : "5em"
   }
 
   return (
