@@ -1,6 +1,10 @@
-export default function MenuButton() {
+export default function MenuButton({ updateMenuState }) {
 
   return (
-    <button id="menu-button"></button>
+    <button 
+      id="menu-button"
+      onClick={updateMenuState}
+    >
+    </button>
   )
 }
