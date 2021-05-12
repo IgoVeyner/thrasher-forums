@@ -9,14 +9,20 @@ export default function MobileNavBar({ handleLogout }) {
   const user = useSelector(state => state.user)
   const [menuState, setMenuState] = useState(false)
 
-  const updateMenuState = () => {
+  const updateMenuState = e => {
     setMenuState(!menuState)
-    updateDropDownHeight()
+    updateDropDownHeight(e)
   }
 
-  const updateDropDownHeight = () => {
+  const updateDropDownHeight = e => {
     const dropdown = document.querySelector("#mobile-dropdown")
-    dropdown.style.height = menuState ? "0px" : "5em"
+    if (menuState) {
+      e.target.style.backgroundPosition = "-245px -194px"
+      dropdown.style.height = "0px" 
+    } else {
+      e.target.style.backgroundPosition = "-201px -194px"
+      dropdown.style.height = "5em"
+    }
   }
 
   return (
