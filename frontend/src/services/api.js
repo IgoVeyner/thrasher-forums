@@ -3,7 +3,6 @@ import { getToken } from './localstorage'
 const URL = 'http://localhost:3000/api/v1/'
 
 const headers = { 'Content-Type': 'application/json', 'Accepts': 'application/json' }
-const authHeaders = { Authorization: `Bearer ${getToken()}` }
 const fullHeaders = {
   'Content-Type': 'application/json', 
   'Accepts': 'application/json',
@@ -66,7 +65,7 @@ export const destroyComment = id => {
 
 const authFetch = path => {
   return fetch(URL + path, {
-    headers: authHeaders
+    headers:  {Authorization: `Bearer ${getToken()}` }
   })
   .then(parseJSON)
 }
