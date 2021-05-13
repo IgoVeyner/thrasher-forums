@@ -109,6 +109,49 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 #mobile-dropdown {
   display: none;
   background: grey;
+  height: 0px;
+}
+
+.mobile-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.mobile-nav-link {
+  display: inherit;
+  font-size: 3vw;
+  margin: 0px 2.5%;
+  text-decoration: none;
+  transition: filter .3s;
+}
+
+.mobile-nav-link:hover {
+  filter: blur(1.5px);
+}
+
+#mobile-logout {
+  display: inherit;
+  font-size: 3vw;
+  margin: 0px 2.5%;
+  text-decoration: none;
+  background-color: transparent;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  transition: filter .3s;
+}
+
+#mobile-logout-text {
+  display: inherit;
+}
+
+#mobile-logout:hover {
+  filter: blur(1.5px);
+}
+
+#mobile-logout:active {
+  outline: none;
 }
 
 /* Dummy Nav Styling */
