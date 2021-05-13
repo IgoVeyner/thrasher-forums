@@ -16,12 +16,16 @@ export default function MobileNavBar({ handleLogout }) {
 
   const updateDropDownHeight = e => {
     const dropdown = document.querySelector("#mobile-dropdown")
+    const mobileNav = document.querySelector(".mobile-nav-link-container")
+
     if (menuState) {
       e.target.style.backgroundPosition = "-245px -194px"
       dropdown.style.height = "0px" 
+      mobileNav.style.display = "none"
     } else {
       e.target.style.backgroundPosition = "-201px -194px"
-      dropdown.style.height = "5em"
+      dropdown.style.height = "inherit"
+      mobileNav.style.display = "flex"
     }
   }
 

@@ -108,12 +108,11 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 
 #mobile-dropdown {
   display: none;
-  background: grey;
   height: 0px;
 }
 
-.mobile-nav {
-  display: flex;
+.mobile-nav-link-container {
+  display: none;
   justify-content: center;
   width: 100%;
 }
@@ -121,7 +120,7 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 .mobile-nav-link {
   display: inherit;
   font-size: 3vw;
-  margin: 0px 2.5%;
+  margin: 0.5em 2.5%;
   text-decoration: none;
   transition: filter .3s;
 }
@@ -133,7 +132,7 @@ h1, h2, h3, h4, h5, h6, div, span, a {
 #mobile-logout {
   display: inherit;
   font-size: 3vw;
-  margin: 0px 2.5%;
+  margin: 0.5em 2.5%;
   text-decoration: none;
   background-color: transparent;
   padding: 0px;

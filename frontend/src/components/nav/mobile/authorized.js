@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Authorized({ handleLogout }) {
   return (
 
-    <nav className="mobile-nav" >
+    <nav className="mobile-nav-link-container" >
       <Link to="/" className="mobile-nav-link" >
         <span className="thrasher" >
           HOME
