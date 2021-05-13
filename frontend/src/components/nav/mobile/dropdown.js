@@ -1,3 +1,5 @@
+import Authorized from './authorized'
+
 export default function DropDown({ user, handleLogout }) {
 
   return (
