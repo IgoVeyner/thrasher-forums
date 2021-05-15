@@ -1,5 +1,5 @@
 import Logo from '../logo'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import MenuButton from './menuButton'
 import DropDown from './dropdown'
@@ -28,6 +28,22 @@ export default function MobileNavBar({ handleLogout }) {
       mobileNav.style.display = "flex"
     }
   }
+
+  const resetDropDown = () => {
+    const dropdown = document.querySelector("#mobile-dropdown")
+    const mobileNav = document.querySelector(".mobile-nav-link-container")
+    const menuButton = document.querySelector("#menu-button")
+
+    setMenuState(false)
+
+    menuButton.style.backgroundPosition = "-245px -194px"
+    dropdown.style.height = "0px" 
+    mobileNav.style.display = "none"
+  }
+
+  useEffect(() => {
+    resetDropDown()
+  }, [user])
 
   return (
     <>
