@@ -1,14 +1,14 @@
 import Authorized from './authorized'
 import Unauthorized from './unauthorized'
 
-export default function DropDown({ user, handleLogout }) {
+export default function DropDown({ user, handleLogout, resetDropDown }) {
 
   return (
     <div id="mobile-dropdown">
       { user !== "" ? 
-        <Authorized handleLogout={handleLogout} /> 
+        <Authorized handleLogout={handleLogout} resetDropDown={resetDropDown}/> 
         : 
-        <Unauthorized /> 
+        <Unauthorized resetDropDown={resetDropDown}/> 
       }
     </div>
   )

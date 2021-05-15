@@ -53,7 +53,7 @@ export default function MobileNavBar({ handleLogout }) {
           <MenuButton updateMenuState={updateMenuState} /> 
         </div>
 
-        <DropDown user={user} handleLogout={handleLogout} />
+        <DropDown user={user} handleLogout={handleLogout} resetDropDown={resetDropDown} />
       </header>
     </>
   )
