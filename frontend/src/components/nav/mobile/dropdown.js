@@ -1,5 +1,6 @@
 import Authorized from './authorized'
 import Unauthorized from './unauthorized'
+import DummyNav from '../dummy'
 
 export default function DropDown({ user, handleLogout, resetDropDown }) {
 
@@ -10,6 +11,7 @@ export default function DropDown({ user, handleLogout, resetDropDown }) {
         : 
         <Unauthorized resetDropDown={resetDropDown}/> 
       }
+      <DummyNav />
     </div>
   )
 }
