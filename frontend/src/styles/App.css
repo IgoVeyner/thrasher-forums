@@ -751,7 +751,8 @@ main {
     display: block;
   }
 
-  .dummy-nav {
+  #dummy-mobile-nav {
+    display: flex;
     justify-content: center;
     margin-bottom: 1em;
   }

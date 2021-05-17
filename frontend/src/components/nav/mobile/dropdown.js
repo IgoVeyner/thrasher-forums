@@ -1,6 +1,6 @@
 import Authorized from './authorized'
 import Unauthorized from './unauthorized'
-import DummyNav from '../dummy'
+import DummyNav from './dummy'
 
 export default function DropDown({ user, handleLogout, resetDropDown }) {
 
