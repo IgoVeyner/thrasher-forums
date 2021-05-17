@@ -258,6 +258,10 @@ main {
   margin-bottom: 2em;
 }
 
+#dummy-mobile-nav {
+  display: none;
+}
+
 /* Login & Signup page styling */
 
 #login-form-container, #signup-form-container {
