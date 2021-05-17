@@ -1,7 +1,7 @@
 import Authorized from './authorized'
 import Unauthorized from './unauthorized'
 import DummyNav from './dummy'
-import DummyForm from '../../forms/dummyForm'
+import DummyForm from '../../forms/mobileDummyForm'
 
 export default function DropDown({ user, handleLogout, resetDropDown }) {
 

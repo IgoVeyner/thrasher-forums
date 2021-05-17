@@ -18,17 +18,20 @@ export default function MobileNavBar({ handleLogout }) {
     const dropdown = document.querySelector("#mobile-dropdown")
     const mobileNav = document.querySelector(".mobile-nav-link-container")
     const dummyIconNav = document.querySelector("#dummy-mobile-nav")
+    const dummyForm = document.querySelector(".dummy-mobile-form-container")
 
     if (menuState) {
       e.target.style.backgroundPosition = "-245px -194px"
       dropdown.style.height = "0px" 
       mobileNav.style.display = "none"
       dummyIconNav.style.display = "none"
+      dummyForm.style.display = "none"
     } else {
       e.target.style.backgroundPosition = "-201px -194px"
       dropdown.style.height = "inherit"
       mobileNav.style.display = "flex"
       dummyIconNav.style.display = "flex"
+      dummyForm.style.display = "flex"
     }
   }
 
@@ -37,6 +40,7 @@ export default function MobileNavBar({ handleLogout }) {
     const mobileNav = document.querySelector(".mobile-nav-link-container")
     const menuButton = document.querySelector("#menu-button")
     const dummyIconNav = document.querySelector("#dummy-mobile-nav")
+    const dummyForm = document.querySelector(".dummy-mobile-form-container")
 
     setMenuState(false)
 
@@ -44,6 +48,7 @@ export default function MobileNavBar({ handleLogout }) {
     dropdown.style.height = "0px" 
     mobileNav.style.display = "none"
     dummyIconNav.style.display = "none"
+    dummyForm.style.display = "none"
   }
 
   useEffect(() => {

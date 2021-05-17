@@ -761,7 +761,7 @@ main {
     margin-bottom: 1em;
   }
 
-  .dummy-form-container {
+  .dummy-mobile-form-container {
     width: 100%;
     display: flex;
     margin-left: 0px;
@@ -769,6 +769,17 @@ main {
     justify-content: center;
     margin-top: 8px;
     margin-bottom: 1em;
+  }
+
+  .dummy-form {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+  } 
+
+  .dummy-input {
+    top: 0px;
+    width: 70%;
   }
 
   .post-show-title, .post-show-text {
