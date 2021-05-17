@@ -762,7 +762,13 @@ main {
   }
 
   .dummy-form-container {
-    display: none;
+    width: 100%;
+    display: flex;
+    margin-left: 0px;
+    top: none;
+    justify-content: center;
+    margin-top: 8px;
+    margin-bottom: 1em;
   }
 
   .post-show-title, .post-show-text {
