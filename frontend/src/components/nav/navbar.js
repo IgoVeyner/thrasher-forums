@@ -7,8 +7,8 @@ import { useSelector } from 'react-redux'
 export default function NavBar({ handleLogout }) {
 
   const user = useSelector(state => state.user)
-  const classArgs = ["nav", "nav-link", "logout", "logout-text"]
-  const unAuthClassArgs = ["nav", "nav-link"]
+  const authStyles = ["nav", "nav-link", "logout", "logout-text"]
+  const unAuthStyles = ["nav", "nav-link"]
 
   return (
     <header id="nav">
@@ -18,9 +18,9 @@ export default function NavBar({ handleLogout }) {
           <Dummy />
 
         { user !== "" ? 
-          <Authorized handleLogout={handleLogout} classArgs={classArgs}/> 
+          <Authorized handleLogout={handleLogout} styles={authStyles} /> 
           : 
-          <Unauthorized classArgs={unAuthClassArgs} /> 
+          <Unauthorized styles={unAuthStyles} /> 
         }
       </div>
     </header>

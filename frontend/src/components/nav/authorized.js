@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom' 
 
-export default function Authorized({ handleLogout, resetDropDown = null, classArgs }) {
-  const [navClassName, linkClassName, logoutId, logoutTextId] = classArgs
+export default function Authorized({ handleLogout, resetDropDown = null, styles }) {
+  
+  const [navClassName, linkClassName, logoutId, logoutTextId] = styles
 
   return (
 

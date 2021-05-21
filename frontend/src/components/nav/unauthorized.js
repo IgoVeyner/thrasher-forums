@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom' 
 
-export default function Unauthorized({ resetDropDown = null, classArgs }) {
+export default function Unauthorized({ resetDropDown = null, styles }) {
   
-  const [navClassName, linkClassName] = classArgs
+  const [navClassName, linkClassName] = styles
 
   return (
 
