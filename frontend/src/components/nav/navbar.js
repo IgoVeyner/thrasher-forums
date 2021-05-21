@@ -8,6 +8,7 @@ export default function NavBar({ handleLogout }) {
 
   const user = useSelector(state => state.user)
   const classArgs = ["nav", "nav-link", "logout", "logout-text"]
+  const unAuthClassArgs = ["nav", "nav-link"]
 
   return (
     <header id="nav">
@@ -19,7 +20,7 @@ export default function NavBar({ handleLogout }) {
         { user !== "" ? 
           <Authorized handleLogout={handleLogout} classArgs={classArgs}/> 
           : 
-          <Unauthorized /> 
+          <Unauthorized classArgs={unAuthClassArgs} /> 
         }
       </div>
     </header>
