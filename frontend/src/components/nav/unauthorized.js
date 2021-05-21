@@ -6,14 +6,14 @@ export default function Unauthorized({ resetDropDown = null, classArgs }) {
 
   return (
 
-    <nav className="nav" >
-      <Link to="/login" className="nav-link" onClick={resetDropDown} >
+    <nav className={navClassName} >
+      <Link to="/login" className={linkClassName} onClick={resetDropDown} >
         <span className="thrasher" >
           LOGIN
         </span>
       </Link>
     
-      <Link to="/signup" className="nav-link" onClick={resetDropDown} >
+      <Link to="/signup" className={linkClassName} onClick={resetDropDown} >
         <span className="thrasher" >
           SIGNUP
         </span>
