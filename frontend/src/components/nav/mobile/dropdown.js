@@ -1,12 +1,13 @@
 import Authorized from '../authorized'
 import Unauthorized from '../unauthorized'
-import DummyNav from './dummy'
+import Dummy from '../dummy'
 import DummyForm from '../../forms/mobileDummyForm'
 
 export default function DropDown({ user, handleLogout, resetDropDown }) {
-  
+
   const authStyles = ["mobile-nav-link-container", "mobile-nav-link", "mobile-logout", "mobile-logout-text"]
   const unAuthStyles = ["mobile-nav-link-container", "mobile-nav-link"]
+  const dummyStyles = ["dummy-mobile-nav"]
 
   return (
     <div id="mobile-dropdown">
@@ -15,7 +16,7 @@ export default function DropDown({ user, handleLogout, resetDropDown }) {
         : 
         <Unauthorized resetDropDown={resetDropDown} styles={unAuthStyles} /> 
       }
-      <DummyNav />
+      <Dummy styles={dummyStyles} />
       <DummyForm />
     </div>
   )

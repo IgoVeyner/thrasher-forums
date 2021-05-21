@@ -17,7 +17,7 @@ export default function MobileNavBar({ handleLogout }) {
   const updateDropDownHeight = e => {
     const dropdown = document.querySelector("#mobile-dropdown")
     const mobileNav = document.querySelector(".mobile-nav-link-container")
-    const dummyIconNav = document.querySelector("#dummy-mobile-nav")
+    const dummyIconNav = document.querySelector(".dummy-mobile-nav")
     const dummyForm = document.querySelector(".dummy-mobile-form-container")
 
     if (menuState) {
@@ -39,7 +39,7 @@ export default function MobileNavBar({ handleLogout }) {
     const dropdown = document.querySelector("#mobile-dropdown")
     const mobileNav = document.querySelector(".mobile-nav-link-container")
     const menuButton = document.querySelector("#menu-button")
-    const dummyIconNav = document.querySelector("#dummy-mobile-nav")
+    const dummyIconNav = document.querySelector(".dummy-mobile-nav")
     const dummyForm = document.querySelector(".dummy-mobile-form-container")
 
     setMenuState(false)
