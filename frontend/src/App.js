@@ -25,6 +25,12 @@ function App() {
   const noUser = () => user === "" ? true : false
   const userExists = () => user !== "" ? true : false
 
+  const URL = "thrasher-forums/"
+  const login = URL + "login"
+  const signup = URL + "signup"
+  const boards = URL + "boards/:name"
+  const posts = URL + "posts/:id"
+
   const checkAuthorization = () => {
     if (getToken() && noUser()) {
       setUserFromToken()  
@@ -68,36 +74,36 @@ function App() {
     checkAuthorization()
   }, [])
 
-  const redirectToLoginPreCheck = (route = "/") => {
+  const redirectToLoginPreCheck = (route = URL) => {
     if (userExists()) {
       switch (route) {
-        case "boards/:name":
+        case boards:
           return <PostContainer />
 
-        case "posts/:id":
+        case posts:
           return <PostShowContainer />
         
         default:
           return <BoardsContainer />
       }
     } else {
-      return <Redirect to="/login" />
+      return <Redirect to={login} />
     }
   } 
 
   const redirectToHomePreCheck = route => {
     if (noUser()) {
       switch (route) {
-        case "signup":
+        case signup:
           return <SignupForm handleSignup={handleSignup} />
 
-        case "login":
+        case login:
         default:
           return <LoginForm handleLogin={handleLogin} />
        }
 
     } else {
-      return <Redirect to="/" />
+      return <Redirect to={URL} />
     }
   }
 
@@ -112,23 +118,23 @@ function App() {
 
           <Switch>
             
-            <Route path="/signup" exact >
-              {redirectToHomePreCheck("signup")}
+            <Route path={signup} exact >
+              {redirectToHomePreCheck(signup)}
             </Route>
 
-            <Route path="/login" exact >
-              {redirectToHomePreCheck("login")}
+            <Route path={login} exact >
+              {redirectToHomePreCheck(login)}
             </Route>
 
-            <Route path="/boards/:name" exact >
-              {redirectToLoginPreCheck("boards/:name")}
+            <Route path={boards} exact >
+              {redirectToLoginPreCheck(boards)}
             </Route>
 
-            <Route path="/posts/:id" exact>
-              {redirectToLoginPreCheck("posts/:id")}
+            <Route path={posts} exact>
+              {redirectToLoginPreCheck(posts)}
             </Route>
             
-            <Route path="/" exact >
+            <Route path={URL} exact >
               {redirectToLoginPreCheck()}
             </Route>
 
