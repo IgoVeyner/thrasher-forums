@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2021_03_31_192144) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "boards", force: :cascade do |t|
-    t.string "name"
-    t.string "description"
+    t.text "name"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -22,14 +25,14 @@ ActiveRecord::Schema.define(version: 2021_03_31_192144) do
   create_table "comments", force: :cascade do |t|
     t.integer "user_id"
     t.integer "post_id"
-    t.string "text"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.string "title"
+    t.text "title"
     t.integer "board_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,9 +40,9 @@ ActiveRecord::Schema.define(version: 2021_03_31_192144) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password_digest"
-    t.string "email"
+    t.text "username"
+    t.text "password_digest"
+    t.text "email"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
