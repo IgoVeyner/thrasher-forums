@@ -1,6 +1,6 @@
 import { getToken } from './localstorage'
 
-const URL = 'http://localhost:3000/api/v1/'
+const URL = 'https://thrasher-forums.herokuapp.com/api/v1/'
 
 const headers = { 'Content-Type': 'application/json', 'Accepts': 'application/json' }
 const fullHeaders = {
