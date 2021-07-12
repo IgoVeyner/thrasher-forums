@@ -1,7 +1,7 @@
 import './styles/App.css'
 import SignupForm from './components/forms/signup'
 import LoginForm from './components/forms/login'
-import { BrowserRouter as HashRouter, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
@@ -71,10 +71,10 @@ function App() {
   const redirectToLoginPreCheck = (route = "/") => {
     if (userExists()) {
       switch (route) {
-        case "/boards":
+        case "/boards/:name":
           return <PostContainer />
 
-        case "/posts":
+        case "/posts/:id":
           return <PostShowContainer />
         
         default:
@@ -106,9 +106,7 @@ function App() {
       return null
     } else {
       return (
-        <HashRouter
-          basename='/thrasher-forums'
-        >
+        <Router>
           <NavBar handleLogout={handleLogout} />
           <MobileNavBar handleLogout={handleLogout} />
 
@@ -122,12 +120,12 @@ function App() {
               {redirectToHomePreCheck("/login")}
             </Route>
 
-            <Route path={"/boards"} exact >
-              {redirectToLoginPreCheck("/boards")}
+            <Route path={"/boards/:name"} exact >
+              {redirectToLoginPreCheck("/boards/:name")}
             </Route>
 
-            <Route path={"/posts"} exact>
-              {redirectToLoginPreCheck("/posts")}
+            <Route path={"/posts/:id"} exact>
+              {redirectToLoginPreCheck("/posts/:id")}
             </Route>
             
             <Route path={"/"} exact >
@@ -137,7 +135,7 @@ function App() {
             <Route path="*" component={NoMatch} />
 
           </Switch>
-        </HashRouter>
+        </Router>
       )
     }
   }
