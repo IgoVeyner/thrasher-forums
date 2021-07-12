@@ -1,7 +1,7 @@
 import './styles/App.css'
 import SignupForm from './components/forms/signup'
 import LoginForm from './components/forms/login'
-import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as HashRouter, Redirect, Route, Switch } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { fetchLogin, postUser } from './services/api'
 import { getUser, setFetchedUser, clearUser } from './redux/actions/userActions'
@@ -24,12 +24,6 @@ function App() {
 
   const noUser = () => user === "" ? true : false
   const userExists = () => user !== "" ? true : false
-
-  const URL = "thrasher-forums/"
-  const login = URL + "login"
-  const signup = URL + "signup"
-  const boards = URL + "boards/:name"
-  const posts = URL + "posts/:id"
 
   const checkAuthorization = () => {
     if (getToken() && noUser()) {
@@ -74,36 +68,36 @@ function App() {
     checkAuthorization()
   }, [])
 
-  const redirectToLoginPreCheck = (route = URL) => {
+  const redirectToLoginPreCheck = (route = "/") => {
     if (userExists()) {
       switch (route) {
-        case boards:
+        case "/boards":
           return <PostContainer />
 
-        case posts:
+        case "/posts":
           return <PostShowContainer />
         
         default:
           return <BoardsContainer />
       }
     } else {
-      return <Redirect to={login} />
+      return <Redirect to={"/login"} />
     }
   } 
 
   const redirectToHomePreCheck = route => {
     if (noUser()) {
       switch (route) {
-        case signup:
+        case '/signup':
           return <SignupForm handleSignup={handleSignup} />
 
-        case login:
+        case '/login':
         default:
           return <LoginForm handleLogin={handleLogin} />
        }
 
     } else {
-      return <Redirect to={URL} />
+      return <Redirect to={"/"} />
     }
   }
 
@@ -112,36 +106,38 @@ function App() {
       return null
     } else {
       return (
-        <Router>
+        <HashRouter
+          basename='/thrasher-forums'
+        >
           <NavBar handleLogout={handleLogout} />
           <MobileNavBar handleLogout={handleLogout} />
 
           <Switch>
             
-            <Route path={signup} exact >
-              {redirectToHomePreCheck(signup)}
+            <Route path={"/signup"} exact >
+              {redirectToHomePreCheck("/signup")}
             </Route>
 
-            <Route path={login} exact >
-              {redirectToHomePreCheck(login)}
+            <Route path={"/login"} exact >
+              {redirectToHomePreCheck("/login")}
             </Route>
 
-            <Route path={boards} exact >
-              {redirectToLoginPreCheck(boards)}
+            <Route path={"/boards"} exact >
+              {redirectToLoginPreCheck("/boards")}
             </Route>
 
-            <Route path={posts} exact>
-              {redirectToLoginPreCheck(posts)}
+            <Route path={"/posts"} exact>
+              {redirectToLoginPreCheck("/posts")}
             </Route>
             
-            <Route path={URL} exact >
+            <Route path={"/"} exact >
               {redirectToLoginPreCheck()}
             </Route>
 
             <Route path="*" component={NoMatch} />
 
           </Switch>
-        </Router>
+        </HashRouter>
       )
     }
   }
