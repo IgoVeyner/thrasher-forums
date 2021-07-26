@@ -1,5 +1,5 @@
 # Thrasher Forums
-[ image ] 
+[![Site preview](frontend/src/images/web.png)](https://thrasher-forums.web.app/)
 
 Skateboarding's number 1 magazine has decided to make a forum site. Skateboarders around the world will be able to sign up for an account, make posts and make comments. Topics include events, videos and photos.
 
